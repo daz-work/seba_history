@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<title>洗馬地区誌HP — サイトマップ v0.4</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Sans","Yu Gothic","Meiryo",sans-serif;background:#f5f4f0;color:#2C2C2A;padding:32px}
+.doc-title{font-size:18px;font-weight:500;margin-bottom:4px}
+.doc-meta{font-size:11px;color:#888780;margin-bottom:32px}
+.sec-head{font-size:11px;font-weight:500;letter-spacing:.12em;color:#888780;border-bottom:1px solid #2C2C2A;padding-bottom:6px;margin-bottom:24px}
+
+/* ツリー全体 */
+.sm-wrap{display:flex;align-items:flex-start;gap:0}
+.h-line{height:1px;background:#888780;align-self:center;flex-shrink:0}
+.sm-branch{display:flex;flex-direction:column;position:relative}
+.sm-branch::before{content:"";position:absolute;left:0;top:28px;bottom:28px;width:1px;background:#888780}
+.sm-row{display:flex;align-items:center;margin:8px 0}
+.sm-row-line{width:20px;height:1px;background:#888780;flex-shrink:0}
+
+/* ページカード（要素を内包） */
+.sm-page{
+  border:1.5px solid #2C2C2A;
+  border-radius:6px;
+  background:#fff;
+  padding:10px 12px 10px 12px;
+  flex-shrink:0;
+  min-width:160px;
+}
+.sm-page-num{font-size:9px;color:#888780;margin-bottom:2px}
+.sm-page-title{font-size:12px;font-weight:600;color:#2C2C2A;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #E0DED8}
+
+/* P1ルートカード */
+.sm-page.root{
+  background:#fff;
+  border-color:#2C2C2A;
+}
+.sm-page.root small{font-size:9px;color:#888780;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #E0DED8;margin-top:-4px}
+
+/* サブページカード（P3-1/P3-2） */
+.sm-page.sub{
+  border:1px solid #888780;
+  min-width:140px;
+}
+.sm-page.sub .sm-page-num{color:#B4B2A9}
+.sm-page.sub .sm-page-title{font-size:11px;color:#5F5E5A}
+
+/* P3-2（P3-1の配下）*/
+.sm-page.subsub{
+  border:1px dashed #888780;
+  min-width:140px;
+}
+.sm-page.subsub .sm-page-num{color:#B4B2A9}
+.sm-page.subsub .sm-page-title{font-size:11px;color:#5F5E5A}
+
+/* 要素ラベル群（カード内） */
+.els{display:flex;flex-direction:column;gap:4px}
+.el{font-size:10px;padding:3px 8px;border-radius:2px;white-space:nowrap}
+.el-fix{background:#F1EFE8;border:0.5px solid #D3D1C7;color:#444441}
+.el-upd{background:#E6F1FB;border:0.5px solid #B5D4F4;color:#0C447C}
+.el-caut{background:#FAEEDA;border:0.5px solid #FAC775;color:#633806}
+.el-link{background:#fff;border:0.5px dashed #B4B2A9;color:#888780}
+
+/* P3-1＋P3-2のまとまり */
+.sm-sub-group{display:flex;flex-direction:column;gap:0}
+.sm-sub-branch{position:relative}
+.sm-sub-branch::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:1px;background:#D3D1C7}
+.sm-sub-row{display:flex;align-items:flex-start;margin:4px 0}
+.sm-sub-row-line{width:16px;height:1px;background:#D3D1C7;flex-shrink:0;margin-top:22px}
+
+.legend{display:flex;gap:16px;margin-top:24px;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:#888780}
+.leg-box{width:14px;height:10px;border-radius:2px}
+.note{font-size:10px;color:#888780;margin-top:16px;line-height:1.7;border-left:2px solid #D3D1C7;padding-left:10px}
+</style></head><body>
+
+<div class="doc-title">洗馬（せば）地区誌HP — サイトマップ</div>
+<div class="meta">v23.0　2026年4月21日提出</div>
+<div class="sec-head">ページ構成図</div>
+
+<div class="sm-wrap">
+
+  <!-- P1 ルートカード（要素内包） -->
+  <div class="sm-page root">
+    <div class="sm-page-num">P1</div>
+    <div class="sm-page-title">トップページ</div>
+    <small>グローバルナビ・フッター（全P共通）</small>
+    <div class="els">
+      <div class="el el-fix">キービジュアル＋キャッチコピー</div>
+      <div class="el el-fix">地区誌の概要・刊行スケジュール</div>
+      <div class="el el-upd">最新活動 最新3件</div>
+      <div class="el el-link">→ 購入・お問い合わせCTA（P4へ）</div>
+    </div>
+  </div>
+
+  <div class="h-line" style="width:40px;align-self:flex-start;margin-top:28px"></div>
+
+  <!-- P1から分岐する子ページ群 -->
+  <div class="sm-branch">
+
+    <!-- P2 -->
+    <div class="sm-row">
+      <div class="sm-row-line"></div>
+      <div class="sm-page">
+        <div class="sm-page-num">P2</div>
+        <div class="sm-page-title">読みどころ</div>
+        <div class="els">
+          <div class="el el-fix">4つの特徴カード（写真＋説明）</div>
+          <div class="el el-fix">地区誌7章の構成紹介</div>
+          <div class="el el-fix">誌面サンプル画像</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3-1 + P3-2 -->
+    <div class="sm-row" style="align-items:flex-start">
+      <div class="sm-row-line" style="margin-top:26px"></div>
+      <div class="sm-sub-group">
+        <!-- P3-1 -->
+        <div class="sm-page sub">
+          <div class="sm-page-num">P3-1</div>
+          <div class="sm-page-title">活動記録 一覧</div>
+          <div class="els">
+            <div class="el el-upd">投稿一覧（ニュース／レポート）</div>
+            <div class="el el-fix">今後の予定リスト</div>
+            <div class="el el-fix">ニュースPDF一覧</div>
+          </div>
+        </div>
+        <!-- P3-1→P3-2 縦線＋横線＋P3-2カード -->
+        <div style="display:flex;align-items:flex-start;margin-top:6px">
+          <div style="width:20px;flex-shrink:0;position:relative;align-self:stretch">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:1px;background:#D3D1C7"></div>
+            <div style="position:absolute;left:0;top:22px;width:20px;height:1px;background:#D3D1C7"></div>
+          </div>
+          <div class="sm-page subsub">
+            <div class="sm-page-num">P3-2</div>
+            <div class="sm-page-title">活動記録 詳細</div>
+            <div class="els">
+              <div class="el el-upd">記事本文・写真</div>
+              <div class="el el-fix">ラベル（ニュース／レポート）</div>
+              <div class="el el-link">← 一覧に戻る／関連記事</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="sm-row">
+      <div class="sm-row-line"></div>
+      <div class="sm-page">
+        <div class="sm-page-num">P4</div>
+        <div class="sm-page-title">プロジェクト</div>
+        <div class="els">
+          <div class="el el-fix">編集委員会体制・集合写真</div>
+          <div class="el el-caut">購入・寄付案内（確定後に更新）</div>
+          <div class="el el-link">→ お問い合わせ（Googleフォーム）</div>
+          <div class="el el-fix">関連リンク</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sm-branch -->
+</div><!-- /sm-wrap -->
+
+<div class="legend">
+  <div class="leg-item"><div class="leg-box" style="background:#F1EFE8;border:0.5px solid #D3D1C7"></div>固定コンテンツ</div>
+  <div class="leg-item"><div class="leg-box" style="background:#E6F1FB;border:0.5px solid #B5D4F4"></div>更新コンテンツ（WP投稿で自動反映）</div>
+  <div class="leg-item"><div class="leg-box" style="background:#FAEEDA;border:0.5px solid #FAC775"></div>確定後に更新</div>
+  <div class="leg-item"><div class="leg-box" style="background:#fff;border:0.5px dashed #B4B2A9"></div>他ページ・外部へのリンク</div>
+</div>
+<div class="note">
+  ※ 征矢野氏がWP「投稿」を公開するだけで、P1最新活動・P3-1一覧・P3-2詳細が自動更新される。<br>
+  ※ P3-1・P3-2はWPの標準「投稿」機能をそのまま利用。テンプレートは1種類。
+</div>
+
+</body></html>

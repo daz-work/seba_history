@@ -10,6 +10,8 @@
 - **ワイヤーフレームを修正する場合、既存ファイルを上書きしない。** 変更対象ファイルのみ `wireframes/_archive/YYYYMMDD/` にコピーしてからバージョン番号を上げて保存する（例：seba_02_wf_p1_v20 → v21）。
 - 最新ファイルは常に `wireframes/` 直下に置く。ページごとにバージョンが異なってよい。
 - アーカイブはファイル名検索で探す。
+- **デザインカンプの最新版は `design/` 直下に置く。** 旧版・PC単体版は `design/_archive/` へ。
+- **提出時は `design/YYMMDD/` フォルダに提出ファイルをコピーして保管する。**
 
 ---
 
@@ -19,7 +21,7 @@
 |------|------|
 | 目的 | 洗馬地区誌編纂プロジェクトのHP制作 |
 | 発注者 | 中原文彦（父）。地区誌編集委員長 |
-| 現フェーズ | ワイヤーフレーム作業中（P1:v22 / P2:v23 / P3-1:v21 / P3-2:v22 / P4:v23 / F1:v21） |
+| 現フェーズ | ワイヤーフレーム作業中（全ページv23統一） |
 | 技術スタック | HTML/CSS → WordPressテーマ化（ConoHaWing） |
 | デプロイ | GitHub → ConoHaWing（SSH or FTP、方法未確定） |
 
@@ -33,14 +35,20 @@ C:\Users\nshot\projects\seba_history\
 ├── README.md                  ← GitHub用プロジェクト概要
 ├── .gitignore
 ├── wireframes\
-│   ├── seba_01_sitemap_v20.html         ← 最新WF（wireframes直下が常に最新）
-│   ├── seba_02_wf_p1_v22_pcsp.html
+│   ├── seba_01_sitemap_v23.html         ← 最新WF（wireframes直下が常に最新）
+│   ├── seba_02_wf_p1_v23_pcsp.html
 │   ├── seba_03_wf_p2_v23_pcsp.html
-│   ├── seba_04_wf_p3_1_v21_pcsp.html
-│   ├── seba_05_wf_p3_2_v22_pcsp.html
+│   ├── seba_04_wf_p3_1_v23_pcsp.html
+│   ├── seba_05_wf_p3_2_v23_pcsp.html
 │   ├── seba_06_wf_p4_v23_pcsp.html
-│   ├── seba_07_wf_f1_v21_pcsp.html
+│   ├── seba_07_wf_f1_v23_pcsp.html
+│   ├── 260421\                ← 提出済WF（PDF）。日付フォルダで管理
 │   └── _archive\              ← 変更前ファイルのみ、日付フォルダ管理（例：20260418/）
+├── design\                    ← デザインカンプ（最新版をdirectly置く）
+│   ├── seba_comp_p1_A_v7_sp.html  ← 最新デザイン（PC+SP）
+│   ├── seba_comp_p1_B_v7_sp.html  ← 最新デザイン（PC+SP）
+│   ├── 260421\                ← 提出済デザイン（日付フォルダで管理）
+│   └── _archive\              ← 旧版・PC単体版など
 ├── theme\                     ← WordPressテーマ本体（コーディング開始後）
 │   ├── assets\
 │   │   ├── css\
