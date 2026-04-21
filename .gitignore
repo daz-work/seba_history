@@ -1,0 +1,24 @@
+# 父から提供された参考資料（未公開資料・個人情報含む可能性あり）
+_refs/
+
+# 設計メモ・内部ドキュメント（公開不要）
+_docs/
+
+# WF旧版アーカイブ（誤参照防止・容量節約）
+wireframes/_archive/
+
+# デザインカンプ旧版アーカイブ
+design/_archive/
+
+# Claude Code ローカル設定
+.claude/
+
+# OS・エディタ系
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp
+
+# WordPressテーマ開発時
+node_modules/
