@@ -10,8 +10,9 @@
 - **ワイヤーフレームを修正する場合、既存ファイルを上書きしない。** 変更対象ファイルのみ `wireframes/_archive/YYYYMMDD/` にコピーしてからバージョン番号を上げて保存する（例：seba_02_wf_p1_v20 → v21）。
 - 最新ファイルは常に `wireframes/` 直下に置く。ページごとにバージョンが異なってよい。
 - アーカイブはファイル名検索で探す。
-- **デザインカンプの最新版は `design/` 直下に置く。** 旧版・PC単体版は `design/_archive/` へ。
+- **デザインカンプの最新版は `design/new/` に置く。** 旧版・PC単体版は `design/_archive/` へ。
 - **提出時は `design/YYMMDD/` フォルダに提出ファイルをコピーして保管する。**
+- `design/new/`・`design/YYMMDD/` はすべて同じ階層なので画像パスは `../../theme/assets/images/` で統一。コピーしてもパス修正不要。
 
 ---
 
@@ -45,8 +46,9 @@ C:\Users\nshot\projects\seba_history\
 │   ├── 260421\                ← 提出済WF（PDF）。日付フォルダで管理
 │   └── _archive\              ← 変更前ファイルのみ、日付フォルダ管理（例：20260418/）
 ├── design\                    ← デザインカンプ（最新版をdirectly置く）
-│   ├── seba_comp_p1_A_v7_sp.html  ← 最新デザイン（PC+SP）
-│   ├── seba_comp_p1_B_v7_sp.html  ← 最新デザイン（PC+SP）
+│   ├── new\                   ← 最新デザイン（常にここが最新）
+│   │   ├── seba_comp_p1_A_v7_sp.html
+│   │   └── seba_comp_p1_B_v7_sp.html
 │   ├── 260421\                ← 提出済デザイン（日付フォルダで管理）
 │   └── _archive\              ← 旧版・PC単体版など
 ├── theme\                     ← WordPressテーマ本体（コーディング開始後）

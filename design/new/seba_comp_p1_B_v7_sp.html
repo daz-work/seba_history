@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>案A v7 SP｜洗馬地区誌 HP — P1 トップ</title>
+<title>案B v7 SP｜洗馬地区誌 HP — P1 トップ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -80,31 +80,55 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 
-/* ── HERO（A案：コンパクト） ── */
+/* ── HERO（B案：フルスクリーン） ── */
 .hero {
-  position: relative; width: 100%;
-  aspect-ratio: 21/5; min-height: 180px; max-height: 36vh;
+  position: relative;
+  height: 100vh; height: 100dvh; min-height: 600px;
   overflow: hidden;
 }
 .hero-img {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center 38%;
+  object-fit: cover; object-position: center 30%;
 }
 .hero::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(to bottom,
-    rgba(0,0,0,.38) 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.58) 100%);
+    rgba(0,0,0,.38) 0%, rgba(0,0,0,.04) 45%, rgba(0,0,0,.62) 100%);
 }
 .hero-content-wrap {
   position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end;
 }
 .hero-content {
   max-width: var(--content-w); width: 100%;
-  margin: 0 auto; padding: 0 40px 30px; color: #fff;
+  margin: 0 auto; padding: 0 40px 100px; color: #fff;
 }
-.hero-eyebrow { font-size: 12px; letter-spacing: .2em; color: rgba(255,255,255,.65); margin-bottom: 8px; font-weight: 300; }
-.hero-catch { font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 400; line-height: 1.55; letter-spacing: .06em; margin-bottom: 8px; }
-.hero-sub { font-size: 13px; font-weight: 300; letter-spacing: .08em; color: rgba(255,255,255,.65); }
+.hero-rule { display: block; width: 36px; height: 1px; background: rgba(255,255,255,.45); margin-bottom: 16px; }
+.hero-eyebrow { font-size: 12px; letter-spacing: .28em; color: rgba(255,255,255,.62); margin-bottom: 18px; font-weight: 300; }
+.hero-catch { font-family: 'Noto Serif JP', serif; font-size: 42px; font-weight: 300; line-height: 1.65; letter-spacing: .06em; margin-bottom: 24px; }
+.hero-sub { font-size: 12px; font-weight: 300; letter-spacing: .18em; color: rgba(255,255,255,.58); line-height: 2; }
+
+/* スクロールインジケーター */
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  z-index: 3; text-align: center;
+}
+.hero-scroll-btn {
+  background: none; border: 1px solid rgba(255,255,255,.38); cursor: pointer;
+  color: rgba(255,255,255,.72); padding: 12px 28px;
+  border-radius: 28px;
+  display: inline-flex; flex-direction: row; align-items: center; gap: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px; letter-spacing: .1em; font-weight: 300;
+  transition: color .2s, border-color .2s, background .2s;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+.hero-scroll-btn:hover { color: #fff; border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
+.scroll-arrow { display: inline-block; animation: scroll-bounce 2.2s ease-in-out infinite; }
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: .72; }
+  50%       { transform: translateY(5px); opacity: 1; }
+}
 
 /* ── セクション共通 ── */
 .sec { width: 100%; }
@@ -132,10 +156,7 @@ body {
 .book-spec { font-size: 13px; color: var(--mid); margin-bottom: 16px; letter-spacing: .05em; }
 .book-desc { font-size: 14px; color: var(--ink-mid); line-height: 2.0; margin-bottom: 20px; }
 
-.book-samples {
-  flex: 0 0 50%; min-width: 0;
-  display: flex; gap: 16px; align-items: stretch;
-}
+.book-samples { flex: 0 0 50%; min-width: 0; display: flex; gap: 16px; align-items: stretch; }
 .book-sample-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .book-sample-item.cover { flex: 0 0 auto; width: 33%; }
 .book-sample-item.inner { flex: 1; min-width: 0; }
@@ -233,16 +254,14 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   .nav-links { display: none; }
   .nav-hamburger { display: flex; align-items: center; }
 
-  /* Hero A: PC の 21/5 は SP で極端に短いため 3/2 に変更 */
-  .hero {
-    aspect-ratio: 3/2;
-    min-height: 200px;
-    max-height: none;
-  }
-  .hero-catch { font-size: 20px; margin-bottom: 6px; }
-  .hero-eyebrow { font-size: 11px; margin-bottom: 5px; }
-  .hero-sub { font-size: 11px; letter-spacing: .05em; }
-  .hero-content { padding: 0 20px 20px; }
+  /* Hero B：フルスクリーンはそのまま、文字サイズのみ調整 */
+  .hero { min-height: 560px; }
+  .hero-rule { margin-bottom: 12px; }
+  .hero-catch { font-size: 28px; margin-bottom: 18px; }
+  .hero-eyebrow { font-size: 11px; margin-bottom: 12px; }
+  .hero-sub { font-size: 11px; letter-spacing: .08em; }
+  .hero-content { padding: 0 20px 80px; }
+  .hero-scroll { bottom: 24px; }
 
   /* セクション共通 */
   .sec-inner { padding: 44px 20px; }
@@ -284,7 +303,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 </head>
 <body>
 
-<div class="concept-badge">案A v7 SP — デザイン方向性確認用</div>
+<div class="concept-badge">案B v7 SP — キービジュアル大きめ</div>
 
 <div class="hero-wrap">
   <header class="nav-outer">
@@ -301,13 +320,19 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   </header>
 
   <section class="hero">
-    <img class="hero-img" src="../theme/assets/images/narai_wide.webp" alt="洗馬の風景">
+    <img class="hero-img" src="../../theme/assets/images/hyoshi.webp" alt="洗馬の風景">
     <div class="hero-content-wrap">
       <div class="hero-content">
+        <span class="hero-rule"></span>
         <p class="hero-eyebrow">長野県塩尻市　洗馬（せば）</p>
-        <h1 class="hero-catch">この土地の記憶を、かたちにする。</h1>
+        <h1 class="hero-catch">この土地の記憶を、<br>かたちにする。</h1>
         <p class="hero-sub">洗馬地区の自然・歴史・くらしを記録する地区誌編纂プロジェクト</p>
       </div>
+    </div>
+    <div class="hero-scroll">
+      <button class="hero-scroll-btn" id="scrollBtn">
+        続きを見る<span class="scroll-arrow">↓</span>
+      </button>
     </div>
   </section>
 </div>
@@ -330,11 +355,11 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
       </div>
       <div class="book-samples">
         <div class="book-sample-item cover">
-          <img class="book-cover-img" src="../theme/assets/images/hyoshi_new.webp" alt="表紙サンプル">
+          <img class="book-cover-img" src="../../theme/assets/images/hyoshi_new.webp" alt="表紙サンプル">
           <p class="book-sample-caption">表紙（案）</p>
         </div>
         <div class="book-sample-item inner">
-          <img class="book-inner-img" src="../theme/assets/images/sample_inner.webp" alt="本文サンプル">
+          <img class="book-inner-img" src="../../theme/assets/images/sample_inner.webp" alt="本文サンプル">
           <p class="book-sample-caption">本文サンプル（見開きB4判）</p>
         </div>
       </div>
@@ -342,7 +367,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
     <p class="pickup-label">収録内容 ピックアップ</p>
     <div class="pickup-grid">
       <a class="pickup-card" href="#">
-        <img class="pickup-card-img" src="../theme/assets/images/tanbo_wide.webp" alt="自然と土地">
+        <img class="pickup-card-img" src="../../theme/assets/images/tanbo_wide.webp" alt="自然と土地">
         <div class="pickup-card-body">
           <p class="pickup-cat">NATURE &amp; LAND</p>
           <p class="pickup-head">山と川と、広大な台地。</p>
@@ -358,7 +383,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
         </div>
       </a>
       <a class="pickup-card" href="#">
-        <img class="pickup-card-img" src="../theme/assets/images/kamaian_wide.webp" alt="文化">
+        <img class="pickup-card-img" src="../../theme/assets/images/kamaian_wide.webp" alt="文化">
         <div class="pickup-card-body">
           <p class="pickup-cat">CULTURE</p>
           <p class="pickup-head">信州が誇る、庶民文化の村。</p>
@@ -366,7 +391,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
         </div>
       </a>
       <a class="pickup-card" href="#">
-        <img class="pickup-card-img" src="../theme/assets/images/iwadare_wide.webp" alt="イノベーション">
+        <img class="pickup-card-img" src="../../theme/assets/images/iwadare_wide.webp" alt="イノベーション">
         <div class="pickup-card-body">
           <p class="pickup-cat">INNOVATION</p>
           <p class="pickup-head">ブランド「洗馬のレタス」に。</p>
@@ -478,6 +503,10 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   }
   window.addEventListener('scroll', onScroll, {passive: true});
   onScroll();
+
+  document.getElementById('scrollBtn').addEventListener('click', function(){
+    document.querySelector('.sec').scrollIntoView({behavior: 'smooth'});
+  });
 })();
 </script>
 </body>
