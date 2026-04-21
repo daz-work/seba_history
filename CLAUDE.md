@@ -22,8 +22,10 @@
 |------|------|
 | 目的 | 洗馬地区誌編纂プロジェクトのHP制作 |
 | 発注者 | 中原文彦（父）。地区誌編集委員長 |
-| 現フェーズ | ワイヤーフレーム作業中（全ページv23統一） |
+| 現フェーズ | デザインカンプ作成中（P1 A案/B案 v7 SP版） |
 | 技術スタック | HTML/CSS → WordPressテーマ化（ConoHaWing） |
+| GitHub | https://github.com/daz-work/seba_history |
+| GitHub Pages | https://daz-work.github.io/seba_history/ |
 | デプロイ | GitHub → ConoHaWing（SSH or FTP、方法未確定） |
 
 ---
@@ -121,17 +123,17 @@ C:\Users\nshot\projects\seba_history\
 
 | フェーズ | 状態 | 備考 |
 |---------|------|------|
-| サイトマップ | 🔧 v20更新済 | P4名称「プロジェクト」に変更済み・確認待ち |
-| WF：P1 トップ | 🔧 v22確認待ち | 画像拡大・コピー刷新・ナビ変更済み |
-| WF：P2 読みどころ | 🔧 v23確認待ち | CULTURE SP画像(kamaian.jpg)修正・サイト名修正 |
-| WF：P3-1 活動記録一覧 | 🔧 v21確認待ち | CTA追加・ナビ変更・サイト名修正済み |
-| WF：P3-2 活動記録詳細 | 🔧 v22確認待ち | 2カラム化・SWELLアイキャッチ・サイト名修正 |
-| WF：P4 プロジェクト | 🔧 v23確認待ち | ページ名/eyebrow変更・ヒーロー文言・CTA・体制図修正すべて完了 |
-| WF：フォーム | 🔧 v21確認待ち | ナビ変更済み |
-| デザイン方針の確定 | 🔲 未着手 | _docs/hp_design_brief.md を確認 |
+| サイトマップ | 🔧 v23提出済 | 2026年4月21日 父に提出。FB待ち |
+| WF：P1 トップ | 🔧 v23提出済 | 同上 |
+| WF：P2 読みどころ | 🔧 v23提出済 | 同上 |
+| WF：P3-1 活動記録一覧 | 🔧 v23提出済 | 同上 |
+| WF：P3-2 活動記録詳細 | 🔧 v23提出済 | 同上 |
+| WF：P4 プロジェクト | 🔧 v23提出済 | 同上 |
+| WF：フォーム | 🔧 v23提出済 | 同上 |
+| デザイン：P1 A案/B案 | 🔧 v7提出済 | 2026年4月21日 父に提出。FB待ち |
+| デザイン方針の確定 | 🔲 未着手 | _docs/hp_design_brief.md・_docs/typography_system.md を確認 |
 | HTML/CSSコーディング | 🔲 未着手 | |
 | WordPressテーマ化 | 🔲 未着手 | |
-| GitHub設定 | 🔲 未着手 | |
 | ConoHaWingデプロイ | 🔲 未着手 | |
 
 > 作業が進んだら「CLAUDE.mdを更新して」と指示して状態を書き換える。
