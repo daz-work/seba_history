@@ -22,3 +22,6 @@ desktop.ini
 
 # WordPressテーマ開発時
 node_modules/
+
+# GAS / clasp（プロジェクトID。パブリックリポジトリのため除外）
+.clasp.json

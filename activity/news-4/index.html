@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P3-2-3 v1 SP｜洗馬地区誌 HP — 活動記録 詳細</title>
+<title>P3-2 v1 SP｜洗馬地区誌 HP — 活動記録 詳細</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -107,6 +107,7 @@ body {
   display: inline-block; font-size: 12px; font-weight: 400;
   padding: 3px 9px; border-radius: 2px; letter-spacing: .04em;
 }
+.tag-news  { background: #EAF3DE; color: #27500A; }
 .tag-report { background: #E6F1FB; color: #0C447C; }
 .article-date { font-size: 13px; color: var(--mid); }
 .article-title {
@@ -114,6 +115,21 @@ body {
   font-size: 26px; font-weight: 400;
   line-height: 1.65; letter-spacing: .05em;
   color: var(--ink); margin-bottom: 24px;
+}
+
+/* ── KEY VISUAL ── */
+.article-kv {
+  width: 100%; aspect-ratio: 16/9;
+  background: var(--beige-2); border-radius: 8px;
+  margin-bottom: 28px; overflow: hidden; display: block;
+  object-fit: cover;
+}
+.article-kv-ph {
+  width: 100%; aspect-ratio: 16/9;
+  background: var(--beige-2); border-radius: 8px;
+  margin-bottom: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: var(--mid); letter-spacing: .06em;
 }
 
 /* ── 切り出しプレースホルダー ── */
@@ -127,12 +143,6 @@ body {
   background: #F5DFA0; padding: 2px 8px; border-radius: 2px; letter-spacing: .06em;
 }
 .cutout-desc { font-size: 11px; color: #8B6914; line-height: 1.45; }
-
-/* ── KEY VISUAL ── */
-.article-kv-ph {
-  width: 100%; aspect-ratio: 16/9;
-  border-radius: 8px; margin-bottom: 28px;
-}
 
 /* ── LEAD ── */
 .article-lead {
@@ -151,47 +161,82 @@ body {
 .article-body p { margin-bottom: 1.2em; }
 .article-body p:last-child { margin-bottom: 0; }
 
-/* ── H2 ── */
+/* ── SCHEDULE BOX ── */
+.schedule-box {
+  background: var(--beige-1); border-radius: 4px;
+  padding: 20px 22px; margin-bottom: 32px;
+  border: 1px solid var(--border);
+}
+.schedule-title {
+  font-size: 13px; font-weight: 500; letter-spacing: .08em;
+  color: var(--ink); margin-bottom: 14px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+.schedule-list { list-style: none; }
+.schedule-item {
+  display: flex; gap: 16px;
+  font-size: 14px; color: var(--ink-mid); line-height: 1.7;
+  padding: 7px 0; border-bottom: 1px dashed var(--border);
+}
+.schedule-item:last-child { border-bottom: none; }
+.schedule-year { color: var(--mid); font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+
+/* ── H2 / H3 / H4（案A：左ボーダー・黒） ── */
 .article-h2 {
   font-family: 'Noto Serif JP', serif;
   font-size: 20px; font-weight: 400;
   color: var(--ink); line-height: 1.6; letter-spacing: .05em;
   border-left: 4px solid var(--ink); padding-left: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+.article-h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 17px; font-weight: 500;
+  color: var(--ink); line-height: 1.65; letter-spacing: .04em;
+  border-left: 3px solid var(--beige-2); padding-left: 12px;
+  margin-bottom: 10px;
+}
+.article-h4 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: var(--ink-mid); line-height: 1.7; letter-spacing: .06em;
+  border-left: 2px solid var(--border); padding-left: 10px;
+  margin-bottom: 8px;
 }
 
-/* ── SCHEDULE TABLE ── */
-.article-table {
-  width: 100%; border-collapse: collapse;
-  font-size: 14px; color: var(--ink-mid);
-  margin-bottom: 32px;
-}
-.article-table th, .article-table td {
-  border: 1px solid var(--border);
-  padding: 10px 14px; line-height: 1.7;
-  vertical-align: top;
-}
-.article-table th {
-  background: var(--beige-2);
-  font-weight: 500; color: var(--ink);
-  font-size: 13px; white-space: nowrap; width: 108px;
-}
-.article-table-title {
-  font-size: 13px; font-weight: 500; letter-spacing: .06em;
-  color: var(--ink); margin-bottom: 10px;
-}
-
-/* ── PHOTO GRID（横型2カラム） ── */
-.photo-grid-2col {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 10px; margin-bottom: 32px;
+/* ── PHOTO GRID ── */
+.photo-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 8px; margin-bottom: 32px;
 }
 .photo-item {}
-.photo-ph-box {
+.photo-ph {
   width: 100%; aspect-ratio: 4/3;
-  border-radius: 3px; margin-bottom: 5px;
+  background: var(--beige-2); border-radius: 3px;
+  display: block; margin-bottom: 5px;
+  object-fit: cover;
 }
 .photo-cap { font-size: 12px; color: var(--mid); line-height: 1.45; }
+
+/* ── PDF CARD ── */
+.pdf-card {
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 14px 18px; display: flex; align-items: center; gap: 16px;
+  margin-bottom: 32px; text-decoration: none;
+  transition: background .15s;
+}
+.pdf-card:hover { background: var(--beige-1); }
+.pdf-icon {
+  width: 38px; height: 48px; background: var(--dark); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 10px; font-weight: 500; color: rgba(255,255,255,.85);
+  letter-spacing: .04em; line-height: 1;
+}
+.pdf-info { flex: 1; min-width: 0; }
+.pdf-name { font-size: 14px; font-weight: 400; color: var(--ink); margin-bottom: 3px; }
+.pdf-meta { font-size: 12px; color: var(--mid); }
+.pdf-dl { font-size: 13px; color: var(--ink); white-space: nowrap; }
 
 /* ── PREV/NEXT NAV ── */
 .article-nav {
@@ -244,7 +289,7 @@ body {
 .sb-article:last-child { border-bottom: none; padding-bottom: 0; }
 .sb-thumb {
   width: 54px; aspect-ratio: 4/3; border-radius: 2px;
-  background: var(--beige-2); flex-shrink: 0;
+  background: var(--beige-2); flex-shrink: 0; object-fit: cover;
   display: block;
 }
 .sb-article-info { min-width: 0; }
@@ -253,10 +298,32 @@ body {
 .sb-article-title a { color: inherit; text-decoration: none; }
 .sb-article-title a:hover { color: var(--vermillion); }
 
+/* ── ARTICLE TABLE（SWELLテーブルブロック相当） ── */
+.article-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 14px; color: var(--ink-mid);
+  margin-bottom: 28px;
+}
+.article-table th, .article-table td {
+  border: 1px solid var(--border);
+  padding: 10px 14px; line-height: 1.7;
+  vertical-align: top;
+}
+.article-table th {
+  background: var(--beige-2);
+  font-weight: 500; color: var(--ink);
+  font-size: 13px; white-space: nowrap; width: 108px;
+}
+.article-table-title {
+  font-size: 13px; font-weight: 500; letter-spacing: .06em;
+  color: var(--ink); margin-bottom: 10px;
+}
+
 /* ── CTA ── */
 .sec { width: 100%; }
 .sec-inner { max-width: var(--content-w); margin: 0 auto; padding: 60px 40px; }
 .sec-bg-cta { background: var(--beige-cta); }
+.sec-bg-dark   { background: var(--dark); }
 .cta-inner { text-align: center; }
 .cta-eyebrow { font-size: 11px; letter-spacing: .28em; color: var(--vermillion); margin-bottom: 16px; font-weight: 300; }
 .cta-heading { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.7; letter-spacing: .05em; margin-bottom: 14px; }
@@ -270,15 +337,15 @@ body {
 }
 .cta-btn:hover { background: #7A2E1A; transform: translateY(-2px); }
 
-/* ── SECTION HEADER ── */
+/* ── SECTION HEADER (shared) ── */
+.sec-bg-beige1 { background: var(--beige-1); }
 .ew { font-size: 11px; letter-spacing: .4em; color: var(--vermillion); font-weight: 300; margin-bottom: 8px; }
 .sec-title { font-family: 'Noto Serif JP', serif; font-size: 25px; font-weight: 400; letter-spacing: .05em; margin-bottom: 8px; color: var(--ink); }
-.sec-bg-dark { background: var(--dark); }
-.sec-bg-dark .ew { color: rgba(255,255,255,.28); }
-.sec-bg-dark .sec-title { color: rgba(255,255,255,.82); }
 
 /* ── LINKS ── */
 .links-section .sec-inner { padding-bottom: 28px; }
+.sec-bg-dark .ew { color: rgba(255,255,255,.28); }
+.sec-bg-dark .sec-title { color: rgba(255,255,255,.82); }
 .links-list { display: flex; flex-direction: column; gap: 6px; }
 .link-item {
   display: flex; justify-content: space-between; align-items: center;
@@ -314,7 +381,11 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 
   .article-title { font-size: 21px; margin-bottom: 18px; }
 
-  .photo-grid-2col { gap: 6px; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+
+  .pdf-card { padding: 12px 14px; gap: 12px; }
+  .pdf-icon { width: 32px; height: 40px; font-size: 9px; }
+  .pdf-name { font-size: 13px; }
 
   .article-nav-link { font-size: 13px; }
 
@@ -329,16 +400,16 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 </head>
 <body>
 
-<div class="concept-badge">P3-2-3 v1 SP — 活動記録 詳細（レポート）</div>
+<div class="concept-badge">P3-2 v1 SP — 活動記録 詳細</div>
 
 <header class="nav-outer">
   <div class="nav-inner">
     <div class="nav-logo">洗馬（せば）地区誌<small>編纂会</small></div>
     <ul class="nav-links">
-      <li><a href="#">トップ</a></li>
-      <li><a href="#">読みどころ</a></li>
-      <li><a href="#" class="active">活動記録</a></li>
-      <li><a href="#">ご案内</a></li>
+      <li><a href="../../">トップ</a></li>
+      <li><a href="../../highlights/">読みどころ</a></li>
+      <li><a href="../../activity/" class="active">活動記録</a></li>
+      <li><a href="../../about/">ご案内</a></li>
     </ul>
     <button class="nav-hamburger">&#9776;</button>
   </div>
@@ -347,11 +418,11 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 <!-- BREADCRUMB -->
 <div class="breadcrumb-wrap">
   <nav class="breadcrumb">
-    <a href="#">トップ</a>
+    <a href="../../">トップ</a>
     <span class="breadcrumb-sep">›</span>
-    <a href="#">活動記録</a>
+    <a href="../../activity/">活動記録</a>
     <span class="breadcrumb-sep">›</span>
-    <span class="breadcrumb-current">洗馬の自然学習会開かれる</span>
+    <span class="breadcrumb-current">一次原稿の執筆奮闘中　〜編集委員会ニュース第4号〜</span>
   </nav>
 </div>
 
@@ -363,39 +434,27 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 
     <!-- 記事ヘッダー -->
     <div class="article-tag-row">
-      <span class="tag tag-report">レポート</span>
-      <span class="article-date">2026年1月25日</span>
+      <span class="tag tag-news">ニュース</span>
+      <span class="article-date">2026年2月2日</span>
     </div>
-    <h2 class="article-title">洗馬の自然学習会開かれる</h2>
+    <h2 class="article-title">一次原稿の執筆奮闘中<br><span style="font-size:18px;font-weight:300;letter-spacing:.04em;">〜編集委員会ニュース第4号〜</span></h2>
 
-    <!-- アイキャッチ（洗馬の昆虫13p綴り） -->
-    <img src="../../theme/assets/images/konchu.webp" alt="洗馬の昆虫（13ページ綴り）" class="article-kv-ph" style="object-fit:cover; border-radius:8px; display:block;">
+    <!-- アイキャッチ画像（SWELLアイキャッチ機能・16:9・角丸8px） -->
+    <img src="../../theme/assets/images/new4_img.webp" alt="集まってきた一次執筆原稿" class="article-kv">
 
     <!-- リード文 -->
     <p class="article-lead">
-      洗馬の豊かな自然を調査・記録するすがた部会が、元塩尻市自然博物館館長・野溝美憲氏をお招きし、自然学習会を開催しました。植物・昆虫・キノコなど、洗馬の多彩な自然の姿を学びます。
+      今年度はこれまでの調査・資料収集をもとに、6つの部会では鋭意執筆を進めています。3月末を目途に一次原稿が出来上がる予定です。来年はいよいよ見積りの上、市への補助金申請をしていきます。是非活動を応援ください。
     </p>
 
-    <!-- 本文 -->
-    <div class="article-body" id="report">
-      <p>すがた部会では、昨年11月に元塩尻市自然博物館館長の野溝美憲氏をお招きし、自然学習会を開きました。野溝さんは頻繁に小曽部谷などを訪れ、貴重な植物・昆虫・キノコなどを記録にとどめています。</p>
-      <p>植物では洗馬に548種類もあり、学習会ではそれらを紹介して頂きました。この豊かな自然に満ちた洗馬を地区誌で残して行きたいと思います。</p>
-    </div>
+    <!-- ── セクション1：一次原稿の執筆奮闘中 ── -->
+    <h3 class="article-h2" id="genkou">一次原稿の執筆奮闘中</h3>
 
-    <!-- 写真（野溝美憲氏 ／ 洗馬の植物13p綴り） -->
-    <h3 class="article-h2" id="photos">学習会の様子</h3>
-    <div class="photo-grid-2col">
-      <div class="photo-item">
-        <img src="../../theme/assets/images/nomizo.webp" alt="野溝美憲氏" class="photo-ph-box" style="object-fit:cover; border-radius:3px; display:block;">
-        <p class="photo-cap">野溝美憲氏（元塩尻市自然博物館館長）</p>
-      </div>
-      <div class="photo-item">
-        <img src="../../theme/assets/images/shokubutu.webp" alt="洗馬の植物（13ページ綴り）" class="photo-ph-box" style="object-fit:cover; border-radius:3px; display:block;">
-        <p class="photo-cap">洗馬の植物（13ページ綴り）</p>
-      </div>
-    </div>
+    <!-- 写真：文化祭での展示 -->
+    <img src="../../theme/assets/images/momose.webp" alt="昨年の「洗馬地区文化祭」百瀬市長への展示説明の様子" style="width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:4px; display:block; margin-bottom:8px;">
+    <p class="photo-cap" style="margin-bottom:28px; text-align:center;">昨年の「洗馬地区文化祭」にて　百瀬市長への展示説明の様子</p>
 
-    <!-- 今後の概日程 -->
+    <!-- 概日程テーブル（SWELLテーブルブロック相当） -->
     <p class="article-table-title" id="schedule">今後の概日程</p>
     <table class="article-table">
       <tr>
@@ -412,11 +471,77 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
       </tr>
     </table>
 
+    <!-- ── セクション2：郷土のくらしと道具展 ── -->
+    <h3 class="article-h2" id="exhibition">「郷土のくらしと道具展」開催中</h3>
+    <p style="font-size:13px; color:var(--mid); margin-bottom:14px;">本洗馬歴史の里資料館　3月15日までの金・土・日曜日・祝日</p>
+    <div class="article-body">
+      <p>本洗馬歴史の里資料館（元町）で展示会が開催されています。これは、昨年10月のふるさと文化祭の「洗馬地区誌展」の展示物を移設し、さらに資料館で洗馬の近代資料を集めたものです。ビデオ「美しき洗馬」の上映もあり、見所満載です。ぜひお越しください。</p>
+    </div>
+
+    <!-- 写真グリッド：道具展 3枚（PC:3列 / SP:2列） -->
+    <div class="photo-grid" style="margin-bottom:32px;">
+      <div class="photo-item">
+        <img src="../../theme/assets/images/isho.webp" alt="公民館の貸衣装（戦後の生活改善運動）" class="photo-ph">
+        <p class="photo-cap">公民館の貸衣装（戦後の生活改善運動）</p>
+      </div>
+      <div class="photo-item">
+        <img src="../../theme/assets/images/happi.webp" alt="洗馬消防団長法被などに見入る来館者" class="photo-ph">
+        <p class="photo-cap">洗馬消防団長法被などに見入る来館者</p>
+      </div>
+      <div class="photo-item">
+        <img src="../../theme/assets/images/chikuonki.webp" alt="国産第1号の蓄音機など" class="photo-ph">
+        <p class="photo-cap">国産第1号の蓄音機など</p>
+      </div>
+    </div>
+
+    <!-- ── セクション3：近世部会のご紹介 ── -->
+    <h3 class="article-h2" id="kinsei">「近世部会（江戸時代）」のご紹介</h3>
+
+    <!-- 部員集合写真（活動感） -->
+    <img src="../../theme/assets/images/kinsebukai.webp" alt="近世部会 部員集合写真" style="width:100%; object-fit:cover; border-radius:4px; display:block; margin-bottom:8px;">
+    <p class="photo-cap" style="margin-bottom:20px; text-align:center;">後列：橘 浩明・熊谷もと美・宮本洋一（副部会長）　前列：古田米實・中原文彦（部会長）・宮本清道</p>
+
+    <div class="article-body">
+      <p>私達の住む洗馬地区は江戸時代、高遠藩（上伊那）の飛び地でした。朝日村も合わせ「洗馬郷」とよばれ、本洗馬村・岩垂村・小曽部村に分かれていました。地区には今も多くの古文書や古絵図が残されています。部会ではそれら資料を調査し、現地にも赴いてお話をうかがい、「3章　高遠藩飛び地洗馬郷」「4章　洗馬文化」の執筆を進めています。</p>
+    </div>
+
+    <!-- H3：洗馬の山の名前はいつから -->
+    <h4 class="article-h3" id="myogisan">洗馬の山の名前はいつから　〜 妙義山</h4>
+    <div class="article-body">
+      <p>洗馬の上町・中町・下町地区は茅葺の家が街道沿いに立ち並び、延焼しやすく、度々大火が発生しました。そこで寛永4（1751）年、群馬県の妙義神社を勧請し、山頂に妙義神社を建立しました。以後現在に至るまで妙義神社への代参と火除札の配布が続いています。</p>
+    </div>
+
+    <!-- 写真グリッド：妙義山 2枚 -->
+    <div class="photo-grid" style="grid-template-columns:repeat(2,1fr); margin-bottom:32px;">
+      <div class="photo-item">
+        <img src="../../theme/assets/images/myougisan.webp" alt="三村氏妙義山城の面影（昭和30年ころ）" class="photo-ph">
+        <p class="photo-cap">三村氏妙義山城の面影（昭和30年ころ）</p>
+      </div>
+      <div class="photo-item">
+        <img src="../../theme/assets/images/komonjo.webp" alt="寛永4年 妙義神社勧請の古文書（槻井泉神社蔵）" class="photo-ph">
+        <p class="photo-cap">寛永4年 妙義神社勧請の古文書（槻井泉神社蔵）</p>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>近世部会の調査内容（からたきの峯・洗馬の自然学習会など）は、下記のPDFニュース全文でご覧いただけます。</p>
+    </div>
+
+    <!-- PDFカード -->
+    <a href="../../theme/assets/pdf/news4.pdf" target="_blank" class="pdf-card" id="pdf">
+      <div class="pdf-icon">PDF</div>
+      <div class="pdf-info">
+        <div class="pdf-name">編集委員会ニュース 第4号（全文）</div>
+        <div class="pdf-meta">令和8年2月発行　A4両面</div>
+      </div>
+      <span class="pdf-dl">開く ↗</span>
+    </a>
+
     <!-- 前後記事ナビ -->
     <nav class="article-nav">
-      <a href="#" class="article-nav-link">← 前の記事</a>
-      <a href="#" class="article-nav-center">活動記録一覧へ</a>
-      <a href="#" class="article-nav-link">次の記事 →</a>
+      <a href="#" class="article-nav-link" style="visibility:hidden">← 前の記事</a>
+      <a href="../" class="article-nav-center">活動記録一覧へ</a>
+      <a href="../report-nature-study/" class="article-nav-link">次の記事 →</a>
     </nav>
 
   </main><!-- /article-main -->
@@ -428,33 +553,36 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
     <div class="sb-box">
       <div class="sb-title">目次</div>
       <ol class="sb-toc">
-        <li><a href="#report">学習会レポート</a></li>
-        <li><a href="#photos">学習会の様子</a></li>
+        <li><a href="#genkou">一次原稿の執筆奮闘中</a></li>
         <li><a href="#schedule">今後の概日程</a></li>
+        <li><a href="#exhibition">郷土のくらしと道具展</a></li>
+        <li><a href="#kinsei">近世部会のご紹介</a></li>
+        <li><a href="#myogisan">洗馬の山の名前はいつから</a></li>
+        <li><a href="#pdf">PDF全文</a></li>
       </ol>
     </div>
     <!-- 最新記事 -->
     <div class="sb-box">
       <div class="sb-title">最新記事</div>
       <div class="sb-article">
-        <img class="sb-thumb" src="../../theme/assets/images/new4_img.webp" alt="一次原稿の執筆奮闘中 〜第4号〜">
+        <img class="sb-thumb" src="../../theme/assets/images/konchu.webp" alt="洗馬の自然学習会開かれる">
         <div class="sb-article-info">
-          <div class="sb-article-date">2026年2月2日</div>
-          <div class="sb-article-title"><a href="#">一次原稿の執筆奮闘中 〜第4号〜</a></div>
+          <div class="sb-article-date">2026年1月25日</div>
+          <div class="sb-article-title"><a href="../report-nature-study/">洗馬の自然学習会開かれる</a></div>
         </div>
       </div>
       <div class="sb-article">
         <img class="sb-thumb" src="../../theme/assets/images/shugo.webp" alt="今年度から執筆がスタートしています 〜第3号〜">
         <div class="sb-article-info">
           <div class="sb-article-date">2025年8月4日</div>
-          <div class="sb-article-title"><a href="#">今年度から執筆がスタートしています 〜第3号〜</a></div>
+          <div class="sb-article-title"><a href="../news-3/">今年度から執筆がスタートしています 〜第3号〜</a></div>
         </div>
       </div>
       <div class="sb-article">
         <img class="sb-thumb" src="../../theme/assets/images/himehagi.webp" alt="「洗馬のすがた部会」を紹介">
         <div class="sb-article-info">
           <div class="sb-article-date">2024年12月15日</div>
-          <div class="sb-article-title"><a href="#">「洗馬のすがた部会」を紹介</a></div>
+          <div class="sb-article-title"><a href="../report-sugata/">「洗馬のすがた部会」を紹介</a></div>
         </div>
       </div>
     </div>
@@ -463,14 +591,14 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 
 </div><!-- /article-outer -->
 
-<!-- 応援CTA -->
+<!-- CTA -->
 <section class="sec sec-bg-cta">
   <div class="sec-inner">
     <div class="cta-inner">
       <p class="cta-eyebrow">SUPPORT THE PROJECT</p>
       <h2 class="cta-heading">地区誌の刊行を、<br>一緒に応援してください。</h2>
       <p class="cta-body">購入リクエスト・寄付・情報提供、お気軽にどうぞ。</p>
-      <a href="#" class="cta-btn">応援する・お問い合わせ</a>
+      <a href="https://docs.google.com/forms/d/1746ZnKQOdjzfwLhBq3TWX6Qy_MaE4Rj5w7hSNlRsH_c/viewform" target="_blank" class="cta-btn">応援・お問い合わせ</a>
     </div>
   </div>
 </section>
@@ -497,11 +625,10 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <p>洗馬地区誌編纂会　© 2026</p>
-    <nav class="footer-nav">トップ｜読みどころ｜活動記録｜ご案内</nav>
+    <nav class="footer-nav"><a href="../../">トップ</a>｜<a href="../../highlights/">読みどころ</a>｜<a href="../../activity/">活動記録</a>｜<a href="../../about/">ご案内</a></nav>
   </div>
 </footer>
 

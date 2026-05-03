@@ -348,8 +348,9 @@ body {
 
 /* ── FOOTER ── */
 footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.06); }
-.footer-inner { max-width: var(--content-w); margin: 0 auto; padding: 18px 40px; }
+.footer-inner { max-width: var(--content-w); margin: 0 auto; padding: 18px 40px 36px; display: flex; align-items: center; justify-content: space-between; }
 footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em; }
+.footer-nav { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .05em; }
 
 /* ===== SP OVERRIDES ===== */
 @media (max-width: 767px) {
@@ -381,6 +382,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   .cta-btn { padding: 15px 0; display: block; width: 100%; text-align: center; }
 
   .footer-inner { padding: 16px 20px; }
+  .footer-nav { display: none; }
 }
 </style>
 </head>
@@ -395,7 +397,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
       <li><a href="#">トップ</a></li>
       <li><a href="#">読みどころ</a></li>
       <li><a href="#" class="active">活動記録</a></li>
-      <li><a href="#">プロジェクト</a></li>
+      <li><a href="#">ご案内</a></li>
     </ul>
     <button class="nav-hamburger">&#9776;</button>
   </div>
@@ -579,6 +581,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 <footer>
   <div class="footer-inner">
     <p>洗馬地区誌編纂会　© 2026</p>
+    <nav class="footer-nav">トップ｜読みどころ｜活動記録｜ご案内</nav>
   </div>
 </footer>
 
