@@ -216,12 +216,12 @@ body {
 .progress-status-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
 .progress-badge { background: var(--ink); color: #F7F4EE; font-size: 12px; padding: 3px 13px; letter-spacing: .05em; white-space: nowrap; }
 .progress-note { font-size: 16px; color: var(--ink-mid); }
-.progress-bar { display: flex; gap: 3px; margin-bottom: 7px; }
-.progress-step { flex: 1; height: 3px; background: var(--border); }
+.progress-bar { display: flex; gap: 3px; margin-bottom: 7px; overflow: hidden; }
+.progress-step { flex: 1; min-width: 0; height: 3px; background: var(--border); }
 .progress-step.done { background: var(--ink-mid); }
 .progress-step.now  { background: var(--vermillion); }
-.progress-labels { display: flex; gap: 3px; margin-bottom: 14px; }
-.plabel { flex: 1; font-size: 11px; color: var(--mid); text-align: center; letter-spacing: .04em; }
+.progress-labels { display: flex; gap: 3px; margin-bottom: 14px; overflow: hidden; }
+.plabel { flex: 1; min-width: 0; font-size: 11px; color: var(--mid); text-align: center; letter-spacing: .04em; overflow: hidden; }
 .plabel.now { color: var(--ink); font-weight: 400; }
 .progress-date { font-size: 13px; color: var(--mid); }
 .progress-date strong { color: var(--ink); font-weight: 400; }
