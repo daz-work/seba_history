@@ -1,5 +1,9 @@
 # 洗馬（せば）地区誌HP — CLAUDE.md
 
+@C:\Users\nshot\ai_secretary\CLAUDE.md
+
+---
+
 > Claude Codeが自動で読み込むプロジェクトコンテキスト。
 > 作業後は「CLAUDE.mdを更新して」と指示して進捗・決定事項を反映すること。
 
@@ -10,7 +14,7 @@
 - **ワイヤーフレームを修正する場合、既存ファイルを上書きしない。** 変更対象ファイルのみ `wireframes/_archive/YYYYMMDD/` にコピーしてからバージョン番号を上げて保存する（例：seba_02_wf_p1_v20 → v21）。
 - 最新ファイルは常に `wireframes/` 直下に置く。ページごとにバージョンが異なってよい。
 - アーカイブはファイル名検索で探す。
-- **デザインカンプの最新版は `design/new/` に置く。** 旧版・PC単体版は `design/_archive/` へ。
+- **デザインカンプの最新版は `design/new/` に置く。** 旧版・PC単体版は `design/_archive/` へ。バージョンアップ時は旧版を `_archive/` にコピーしてから新版を `new/` に作成し、旧版を `new/` から削除する。
 - **提出時は `design/YYMMDD/` フォルダに提出ファイルをコピーして保管する。**
 - `design/new/`・`design/YYMMDD/` はすべて同じ階層なので画像パスは `../../theme/assets/images/` で統一。コピーしてもパス修正不要。
 
@@ -22,7 +26,7 @@
 |------|------|
 | 目的 | 洗馬地区誌編纂プロジェクトのHP制作 |
 | 発注者 | 中原文彦（父）。地区誌編集委員長 |
-| 現フェーズ | デザインカンプ作成中（P1 A案/B案 v7 SP版） |
+| 現フェーズ | デザインカンプ作成中（P1 v8完了・P2〜P4 着手準備） |
 | 技術スタック | HTML/CSS → WordPressテーマ化（ConoHaWing） |
 | GitHub | https://github.com/daz-work/seba_history |
 | GitHub Pages | https://daz-work.github.io/seba_history/ |
@@ -49,8 +53,9 @@ C:\Users\nshot\projects\seba_history\
 │   └── _archive\              ← 変更前ファイルのみ、日付フォルダ管理（例：20260418/）
 ├── design\                    ← デザインカンプ（最新版をdirectly置く）
 │   ├── new\                   ← 最新デザイン（常にここが最新）
-│   │   ├── seba_comp_p1_A_v7_sp.html
-│   │   └── seba_comp_p1_B_v7_sp.html
+│   │   ├── seba_comp_p1_A_v8_sp.html
+│   │   ├── seba_comp_p1_B_v8_sp.html
+│   │   └── seba_comp_p2_v2_sp.html
 │   ├── 260421\                ← 提出済デザイン（日付フォルダで管理）
 │   └── _archive\              ← 旧版・PC単体版など
 ├── theme\                     ← WordPressテーマ本体（コーディング開始後）
@@ -130,11 +135,18 @@ C:\Users\nshot\projects\seba_history\
 | WF：P3-2 活動記録詳細 | 🔧 v23提出済 | 同上 |
 | WF：P4 プロジェクト | 🔧 v23提出済 | 同上 |
 | WF：フォーム | 🔧 v23提出済 | 同上 |
-| デザイン：P1 A案/B案 | 🔧 v7提出済 | 2026年4月21日 父に提出。FB待ち |
+| デザイン：P1 A案/B案 | ✅ v8完了 | P1=B案（フルスクリーンKV）、P2〜P4=A案（コンパクトKV）で確定。KV画像=seba_wide.jpg |
+| デザイン：P2 読みどころ | 🔧 v2継続作業中 | 2026年4月28日。サブ画像差し替え・メイン画像16:5化・PC/SP出し分け・文字サイズ修正・マージン調整。細かい残課題あり・FB待ち |
+| デザイン：P4 プロジェクト | 🔧 着手中 | A案v8・P2スタイル踏襲 |
+| デザイン：P3-1 活動記録一覧 | 🔧 v1作成済 | |
+| デザイン：P3-2-1 活動記録詳細（4号） | 🔧 v1作成済 | |
+| デザイン：P3-2-2 活動記録詳細（3号） | 🔧 v1作成済 | 2026年5月2日。実画像差し替え済 |
+| デザイン：P3-2-3 活動記録詳細（洗馬自然学習会） | 🔲 未着手 | レポート型。素材：ニュース4号_裏 下部「洗馬自然学習会」コーナー |
+| デザイン：P3-2-4 活動記録詳細（すがた部会） | 🔧 v1作成済 | 2026年5月2日。レポート型。実画像差し替え済。ヒメハギKV・集合写真・縦型2カラム（カツラ・古池）・横型2カラム（湧水・砂嵐）。SWELL対応テーブル・LINKSセクション含む |
 | デザイン方針の確定 | 🔲 未着手 | _docs/hp_design_brief.md・_docs/typography_system.md を確認 |
 | HTML/CSSコーディング | 🔲 未着手 | |
 | WordPressテーマ化 | 🔲 未着手 | |
-| ConoHaWingデプロイ | 🔲 未着手 | |
+| ConoHaWingデプロイ | 🔲 未着手 | ドメイン seba-archives.org 確保・SSL有効化済。WP adminログイン未実施 |
 
 > 作業が進んだら「CLAUDE.mdを更新して」と指示して状態を書き換える。
 

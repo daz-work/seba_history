@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P2 v2 SP｜洗馬地区誌 HP — 読みどころ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:        #2C2C2A;
+  --ink-mid:    #5F5E5A;
+  --mid:        #888780;
+  --vermillion: #8B3A2A;
+  --white:      #FFFFFF;
+  --beige-1:    #F7F4EE;
+  --beige-2:    #EDE8DC;
+  --beige-cta:  #F5E4D9;
+  --border:     #E0DDD5;
+  --dark:       #2C2C2A;
+  --content-w:  1100px;
+  --nav-h:      62px;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.concept-badge {
+  position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+  z-index: 999; background: var(--vermillion); color: #fff;
+  font-size: 10px; letter-spacing: .2em; padding: 4px 18px;
+  border-radius: 0 0 6px 6px; white-space: nowrap;
+}
+
+/* ── NAV ── */
+.hero-wrap { position: relative; }
+.nav-outer {
+  position: absolute; top: 0; left: 0; right: 0;
+  z-index: 100; background: transparent; transition: background .25s;
+}
+.nav-outer.is-sticky { position: fixed; background: var(--dark); }
+.nav-inner {
+  max-width: var(--content-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: var(--nav-h);
+}
+.nav-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 400; letter-spacing: .1em;
+  line-height: 1.5; color: rgba(255,255,255,.92);
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.nav-logo small {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px; font-weight: 300;
+  color: rgba(255,255,255,.55); margin-left: 7px; letter-spacing: .08em;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 16px; letter-spacing: .1em;
+  color: rgba(255,255,255,.62); text-decoration: none; font-weight: 300;
+  text-shadow: 0 1px 3px rgba(0,0,0,.35); transition: color .2s;
+}
+.nav-links a:hover { color: rgba(255,255,255,.92); }
+.nav-links a.active { color: rgba(255,255,255,.95); }
+.nav-hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,.9); font-size: 22px; line-height: 1; padding: 4px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+
+/* ── HERO（A案コンパクト準拠） ── */
+.hero {
+  position: relative; width: 100%;
+  aspect-ratio: 21/5; min-height: 180px; max-height: 36vh;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 35%;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,.38) 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.58) 100%);
+}
+.hero-content-wrap {
+  position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end;
+}
+.hero-content {
+  max-width: var(--content-w); width: 100%;
+  margin: 0 auto; padding: 0 40px 30px; color: #fff;
+}
+.hero-eyebrow { font-size: 14px; letter-spacing: .2em; color: rgba(255,255,255,.65); margin-bottom: 8px; font-weight: 300; }
+.hero-catch { font-family: 'Noto Serif JP', serif; font-size: 34px; font-weight: 500; line-height: 1.55; letter-spacing: .06em; }
+
+/* ── セクション共通 ── */
+.sec { width: 100%; }
+.sec-inner { max-width: var(--content-w); margin: 0 auto; padding: 60px 40px; }
+.sec-bg-white  { background: var(--white); }
+.sec-bg-beige1 { background: var(--beige-1); }
+.sec-bg-cta    { background: var(--beige-cta); }
+.sec-bg-dark   { background: var(--dark); }
+
+.ew { font-size: 11px; letter-spacing: .4em; color: var(--vermillion); font-weight: 300; margin-bottom: 8px; }
+.sec-title { font-family: 'Noto Serif JP', serif; font-size: 25px; font-weight: 400; letter-spacing: .05em; margin-bottom: 8px; color: var(--ink); }
+.sec-sub { font-size: 14px; color: var(--mid); margin-bottom: 28px; }
+
+.text-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 13px; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--ink-mid); padding-bottom: 1px;
+  letter-spacing: .05em; transition: color .2s, border-color .2s;
+}
+.text-link:hover { color: var(--vermillion); border-color: var(--vermillion); }
+
+/* ── CONTENTS ── */
+.contents-list { border-top: 1px solid var(--border); }
+.contents-item {
+  display: flex; gap: 20px; padding: 12px 0;
+  border-bottom: 1px solid var(--border); align-items: baseline;
+}
+.contents-num { font-size: 11px; color: var(--mid); min-width: 36px; flex-shrink: 0; padding-top: 2px; }
+.contents-num.muted { color: var(--mid); }
+.contents-text { font-size: 15px; color: var(--ink); line-height: 1.7; flex: 1; }
+.contents-text.muted { color: var(--mid); font-size: 14px; }
+.contents-label { font-size: 13px; color: var(--mid); margin-left: 8px; }
+
+/* ── FEATURE SECTIONS ── */
+.feat-sec {
+  max-width: var(--content-w); margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+.feat-main {
+  width: 100%; aspect-ratio: 16/5; object-fit: cover; object-position: center;
+  display: block; margin-bottom: 28px;
+}
+.feat-body { padding: 28px 40px 36px; }
+.feat-ew { font-size: 11px; letter-spacing: .4em; color: var(--vermillion); font-weight: 300; margin-bottom: 8px; }
+.feat-title {
+  font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 400;
+  line-height: 1.6; letter-spacing: .05em; margin-bottom: 10px;
+}
+.feat-copy {
+  font-size: 14px; font-weight: 400; color: var(--ink);
+  border-left: 2.5px solid var(--ink); padding-left: 12px;
+  line-height: 1.65; margin-bottom: 20px; font-style: italic;
+  letter-spacing: .04em;
+}
+.feat-2col {
+  display: grid; grid-template-columns: 1fr 200px; gap: 20px; align-items: start;
+}
+.feat-text { font-size: 15px; color: var(--ink-mid); line-height: 2.1; }
+.feat-text p { margin-bottom: 1em; }
+.feat-text p:last-child { margin-bottom: 0; }
+.feat-subs { display: flex; flex-direction: column; gap: 10px; }
+.sub-item { display: block; }
+.feat-sub-img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  display: block; border-radius: 2px;
+}
+.feat-sub-ph {
+  width: 100%; aspect-ratio: 4/3; background: var(--beige-2);
+  border-radius: 2px; display: block;
+}
+.sub-cap { font-size: 13px; color: var(--mid); line-height: 1.45; margin-top: 6px; }
+
+/* ── TRIVIA ── */
+.trivia-title { font-size: 14px; font-weight: 400; color: var(--ink); margin-bottom: 12px; }
+.trivia-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 8px; margin-bottom: 14px;
+}
+.trivia-item {
+  font-size: 14px; color: var(--ink-mid); padding: 10px 12px;
+  background: rgba(44,44,42,.05); border-radius: 2px; line-height: 1.8;
+}
+.trivia-note { font-size: 11px; color: var(--mid); }
+
+/* ── CTA ── */
+.cta-inner { text-align: center; }
+.cta-eyebrow { font-size: 11px; letter-spacing: .28em; color: var(--vermillion); margin-bottom: 16px; font-weight: 300; }
+.cta-heading { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.7; letter-spacing: .05em; margin-bottom: 14px; }
+.cta-body { font-size: 14px; color: var(--ink-mid); line-height: 2.0; margin-bottom: 32px; }
+.cta-btn {
+  display: inline-block; background: var(--vermillion); color: #fff;
+  font-size: 15px; padding: 16px 56px; border-radius: 32px;
+  text-decoration: none; letter-spacing: .14em;
+  box-shadow: 0 3px 14px rgba(139,58,42,.35);
+  transition: background .2s, transform .15s, box-shadow .15s;
+}
+.cta-btn:hover { background: #7A2E1A; transform: translateY(-2px); }
+
+/* ── LINKS ── */
+.links-section .sec-inner { padding-bottom: 28px; }
+.sec-bg-dark .ew { color: rgba(255,255,255,.28); }
+.sec-bg-dark .sec-title { color: rgba(255,255,255,.82); }
+.links-list { display: flex; flex-direction: column; gap: 6px; }
+.link-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; border: 0.5px solid rgba(255,255,255,.12); border-radius: 3px;
+  text-decoration: none; color: rgba(255,255,255,.7); font-size: 14px; background: transparent;
+  transition: background .15s, border-color .15s;
+}
+.link-item:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.28); }
+.link-ext { font-size: 12px; color: rgba(255,255,255,.3); flex-shrink: 0; margin-left: 16px; white-space: nowrap; }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); }
+.footer-inner { max-width: var(--content-w); margin: 0 auto; padding: 18px 40px; }
+footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em; }
+
+/* ===== SP OVERRIDES ===== */
+@media (max-width: 767px) {
+  :root { --nav-h: 52px; }
+
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; align-items: center; }
+
+  .hero {
+    aspect-ratio: 3/2; min-height: 200px; max-height: none;
+  }
+  .hero-img {
+    inset: auto; top: 0; left: 0; transform: none;
+    width: auto; height: 140%; min-width: 100%;
+  }
+  .hero-catch { font-size: 22px; }
+  .hero-eyebrow { font-size: 13px; margin-bottom: 5px; }
+  .hero-content { padding: 0 20px 20px; }
+
+  .sec-inner { padding: 44px 20px; }
+  .sec-title { font-size: 22px; }
+
+  .contents-item { gap: 12px; }
+  .contents-text { font-size: 14px; }
+
+  /* SP FEATURE */
+  .feat-main {
+    aspect-ratio: 4/3;
+    /* 負マージンでfeat-bodyの左右paddingを打ち消してフル幅に */
+    margin-left: -20px; margin-right: -20px;
+    width: calc(100% + 40px);
+    margin-bottom: 20px;
+  }
+  .feat-body { padding: 20px 20px 28px; }
+  .feat-ew { margin-bottom: 6px; }
+  .feat-title { font-size: 20px; margin-bottom: 8px; }
+  .feat-copy { margin-bottom: 16px; }
+  .feat-2col { grid-template-columns: 1fr; gap: 12px; }
+  .feat-subs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .feat-text { font-size: 14px; }
+  .feat-link { margin-top: 14px; }
+
+  /* TRIVIA */
+  .trivia-grid { grid-template-columns: 1fr; }
+
+  /* CTA */
+  .cta-heading { font-size: 20px; }
+  .cta-btn { padding: 15px 0; display: block; width: 100%; text-align: center; }
+
+  .footer-inner { padding: 16px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="concept-badge">P2 v2 SP — 読みどころ</div>
+
+<div class="hero-wrap">
+  <header class="nav-outer">
+    <div class="nav-inner">
+      <div class="nav-logo">洗馬（せば）地区誌<small>編纂会</small></div>
+      <ul class="nav-links">
+        <li><a href="#">トップ</a></li>
+        <li><a href="#" class="active">読みどころ</a></li>
+        <li><a href="#">活動記録</a></li>
+        <li><a href="#">プロジェクト</a></li>
+      </ul>
+      <button class="nav-hamburger">&#9776;</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img class="hero-img" src="../../theme/assets/images/seba_wide.jpg" alt="洗馬の風景">
+    <div class="hero-content-wrap">
+      <div class="hero-content">
+        <p class="hero-eyebrow">HIGHLIGHTS</p>
+        <h1 class="hero-catch">知れば知るほど、おもしろい土地。</h1>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTENTS -->
+<section class="sec sec-bg-white">
+  <div class="sec-inner">
+    <p class="ew">CONTENTS</p>
+    <h2 class="sec-title">全7章、収録内容</h2>
+    <p class="sec-sub">巻頭カラー口絵から巻末年表まで、全404ページ。</p>
+    <div class="contents-list">
+      <div class="contents-item">
+        <span class="contents-num muted">巻頭</span>
+        <span class="contents-text muted">写真とカラー口絵で見る、洗馬のいま・むかし。</span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">1章</span>
+        <span class="contents-text">信州の昆虫の３分の１が、この小さな村にいる。<span class="contents-label">洗馬のすがた</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">2章</span>
+        <span class="contents-text">縄文遺跡も、京都の公家の荘園も、洗馬にある。<span class="contents-label">洗馬のあけぼの</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">3章</span>
+        <span class="contents-text">農民が、藩の課税新法を撤回させた村。<span class="contents-label">高遠藩飛び地洗馬郷</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">4章</span>
+        <span class="contents-text">一茶も、菅江真澄も、ここに来た。<span class="contents-label">洗馬文化</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">5章</span>
+        <span class="contents-text">信州初の集団種痘。購買組合の先駆け。<span class="contents-label">明治維新から今</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">6章</span>
+        <span class="contents-text">祭り、石仏、水——くらしのかたちが残っている。<span class="contents-label">くらしといのり</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num">7章</span>
+        <span class="contents-text">この村は、住民が自分たちでつくってきた。<span class="contents-label">ふるさとづくり</span></span>
+      </div>
+      <div class="contents-item">
+        <span class="contents-num muted">巻末</span>
+        <span class="contents-text muted">古地図から昭和の航空写真まで。洗馬の変遷を一望できる。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: NATURE & LAND -->
+<div class="feat-sec" id="nature">
+  <div class="feat-body">
+    <p class="feat-ew">NATURE &amp; LAND</p>
+    <h2 class="feat-title">山と川と、広大な台地。</h2>
+    <p class="feat-copy">かつて、山の恵みがこの地を支えた。</p>
+    <picture>
+      <source media="(min-width: 768px)" srcset="../../theme/assets/images/tanbo_wide.webp">
+      <img class="feat-main" src="../../theme/assets/images/tanbo.webp" alt="田んぼと山">
+    </picture>
+    <div class="feat-2col">
+      <div class="feat-text">
+        <p>市内最高峰「からたきの峰」（1,858m）を擁する山岳地帯から、小曽部川の流域にかけて、古くから林業がさかんに営まれてきた。古代の寺社建立から江戸の都市建設まで、木材はその時代の最重要資源の一つ。山の恵みが、村の経済的な基盤を支えた。</p>
+        <p>切り出された木材や物資は、奈良井川が松本平へと流れ出す出口に位置する洗馬を経由し、時の都・京都や江戸へも送り出された。やがて奈良井川と小曽部川などにはさまれた広大な台地（岩垂原410ha・芦ノ田原）の農業開発が、江戸時代初期から進んだ。</p>
+      </div>
+      <div class="feat-subs">
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/iwadare.webp" alt="広大な岩垂原">
+          <div class="sub-cap">広大な岩垂原</div>
+        </div>
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/narai.webp" alt="奈良井川">
+          <div class="sub-cap">奈良井川</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURE: HISTORY -->
+<div class="feat-sec" id="history">
+  <div class="feat-body">
+    <p class="feat-ew">HISTORY</p>
+    <h2 class="feat-title">京都の公家が荘園を置いた村。</h2>
+    <p class="feat-copy">なぜ京都の権力者は、洗馬を欲しがったのか。</p>
+    <picture>
+      <source media="(min-width: 768px)" srcset="../../theme/assets/images/tukiizumi_wide.webp">
+      <img class="feat-main" src="../../theme/assets/images/tukiizumi.webp" alt="月泉神社">
+    </picture>
+    <div class="feat-2col">
+      <div class="feat-text">
+        <p>藤原実資、後白河法皇、室町院。時代の権力者が、遠く信州の洗馬を代々手に入れようとした。洗馬牧は県内に4つしかない私牧の一つ、洗馬の庄は京都・蓮華王院（三十三間堂）の荘園。地名や堂に、今もその言い伝えが残る。</p>
+        <p>桔梗ヶ原がまだ未開発だった時代、洗馬は松本平の北へ向かう唯一の渡河点を擁する物流の「蛇口」だった。馬を産出し交通の要衝でもあるこの地を、権力者たちは何世代にもわたって手放さなかった。そのこと自体が、洗馬の価値を物語っている。</p>
+      </div>
+      <div class="feat-subs">
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/sanesuke.webp" alt="駒競行幸絵巻">
+          <div class="sub-cap">駒競行幸絵巻　階段左の人物が藤原実資</div>
+        </div>
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/kannon.webp" alt="蓮華王院（京都三十三間堂）">
+          <div class="sub-cap">蓮華王院（京都三十三間堂）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURE: CULTURE -->
+<div class="feat-sec" id="culture">
+  <div class="feat-body">
+    <p class="feat-ew">CULTURE</p>
+    <h2 class="feat-title">信州が誇る、庶民文化の村。</h2>
+    <p class="feat-copy">江戸時代に文人が集まった理由がある。</p>
+    <picture>
+      <source media="(min-width: 768px)" srcset="../../theme/assets/images/kamaian_wide.webp">
+      <img class="feat-main" src="../../theme/assets/images/kamaian.webp" alt="釜井庵">
+    </picture>
+    <div class="feat-2col">
+      <div class="feat-text">
+        <p>経済的に潤い、高遠藩の飛び地として中央から距離を置いた洗馬には、自主独立の気風が根付いた。日本民俗学の先駆け・菅江真澄が旅のスタートとして1年余り滞在し、小林一茶も句を寄せた俳人を輩出。「北の小布施、南の洗馬」と並び称された信州庶民文化の中心地だった。</p>
+        <p>この文化の系譜は近代にも続く。文化勲章を受章した医学者・熊谷岱蔵は菅江真澄を宿泊させた医家の6代目。豊かさが文化を呼び、文化が人を育てた。</p>
+      </div>
+      <div class="feat-subs">
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/ezu.webp" alt="釜井庵七夕かざりの絵図">
+          <div class="sub-cap">釜井庵七夕かざりの絵図</div>
+        </div>
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/kumagai.webp" alt="熊谷岱蔵">
+          <div class="sub-cap">熊谷岱蔵</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURE: INNOVATION -->
+<div class="feat-sec" id="innovation">
+  <div class="feat-body">
+    <p class="feat-ew">INNOVATION</p>
+    <h2 class="feat-title">ブランド「洗馬のレタス」に。</h2>
+    <p class="feat-copy">進取の気風は、現代にも生きている。</p>
+    <picture>
+      <source media="(min-width: 768px)" srcset="../../theme/assets/images/iwadare_wide.webp">
+      <img class="feat-main" src="../../theme/assets/images/iwadare.webp" alt="岩垂原">
+    </picture>
+    <div class="feat-2col">
+      <div class="feat-text">
+        <p>戦後の洋菜需要にいち早く目をつけアメリカから種を導入、進駐軍への野菜供給指定地に。「段ボール化」「今日取り明日売り」など独自の工夫を重ね、全国初の予冷庫の導入により「洗馬のレタス」は全国ブランドへと成長した。</p>
+        <p>歴史をたどれば、洗馬は常に時代の先を行ってきた。明治初めの塩尻随一の製糸工場、松本平で先陣を切った購買組合。「洗馬のレタス」は、その最も新しい表れだ。</p>
+      </div>
+      <div class="feat-subs">
+        <div class="sub-item">
+          <img class="feat-sub-img" src="../../theme/assets/images/shinchu.webp" alt="進駐軍">
+          <div class="sub-cap">進駐軍</div>
+        </div>
+        <div class="sub-item">
+          <div class="feat-sub-ph"></div>
+          <div class="sub-cap">全国初の予冷庫（未定）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRIVIA -->
+<section class="sec sec-bg-beige1">
+  <div class="sec-inner">
+    <p class="ew" style="letter-spacing:.44em">MORE</p>
+    <div class="trivia-title">ほかにも、こんな話が地区誌に載ります</div>
+    <div class="trivia-grid">
+      <div class="trivia-item">全国5000種の昆虫のうち1000〜2000種が洗馬にいるといわれている</div>
+      <div class="trivia-item">信州で最初に集団種痘が行われたのが洗馬だった</div>
+      <div class="trivia-item">戦国時代の謎多き城「妙義山城」が洗馬にあった</div>
+      <div class="trivia-item">江戸時代、農民が藩の課税新法を撤回させた「洗馬騒動」があった</div>
+    </div>
+    <p class="trivia-note">※ これらはすべて地区誌『洗馬』に収録予定のコンテンツです</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec sec-bg-cta">
+  <div class="sec-inner cta-inner">
+    <p class="cta-eyebrow">SUPPORT THE PROJECT</p>
+    <h2 class="cta-heading">地区誌の刊行を、<br>一緒に応援してください。</h2>
+    <p class="cta-body">購入リクエスト・寄付・情報提供、お気軽にどうぞ。</p>
+    <a class="cta-btn" href="#">応援・お問い合わせ</a>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section class="sec sec-bg-dark links-section">
+  <div class="sec-inner">
+    <p class="ew">LINKS</p>
+    <h2 class="sec-title">関連リンク</h2>
+    <div class="links-list">
+      <a class="link-item" href="#">
+        <span>本洗馬歴史の里資料館</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+      <a class="link-item" href="#">
+        <span>信州（長野県）中央の自然（野鳥、山野草、風景）</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+      <a class="link-item" href="#">
+        <span>信州塩尻ビデオ</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>洗馬地区誌編纂会　© 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav-outer');
+  var heroWrap = document.querySelector('.hero-wrap');
+  function onScroll(){
+    nav.classList.toggle('is-sticky', heroWrap.getBoundingClientRect().bottom <= 0);
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

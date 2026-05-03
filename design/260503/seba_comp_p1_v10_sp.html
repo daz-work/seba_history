@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>案B v7 SP｜洗馬地区誌 HP — P1 トップ</title>
+<title>案B v9 SP｜洗馬地区誌 HP — P1 トップ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -87,13 +87,17 @@ body {
   overflow: hidden;
 }
 .hero-img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center 30%;
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 140%;
+  min-width: 100%;
 }
 .hero::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(to bottom,
-    rgba(0,0,0,.38) 0%, rgba(0,0,0,.04) 45%, rgba(0,0,0,.62) 100%);
+    rgba(0,0,0,.38) 0%, rgba(0,0,0,.04) 45%, rgba(0,0,0,.72) 100%);
 }
 .hero-content-wrap {
   position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end;
@@ -134,8 +138,10 @@ body {
 .sec { width: 100%; }
 .sec-inner { max-width: var(--content-w); margin: 0 auto; padding: 60px 40px; }
 .sec-bg-white  { background: var(--white); }
+.sec-bg-beige1 { background: var(--beige-1); }
 .sec-bg-beige2 { background: var(--beige-2); }
 .sec-bg-cta    { background: var(--beige-cta); }
+.sec-bg-dark   { background: var(--dark); }
 
 .ew { font-size: 11px; letter-spacing: .4em; color: var(--vermillion); font-weight: 300; margin-bottom: 8px; }
 .sec-title { font-family: 'Noto Serif JP', serif; font-size: 25px; font-weight: 400; letter-spacing: .05em; margin-bottom: 28px; color: var(--ink); }
@@ -224,7 +230,7 @@ body {
 .latest-tag { display: inline-block; font-size: 12px; padding: 1px 7px; letter-spacing: .06em; margin-right: 6px; vertical-align: middle; }
 .tag-n { background: #EAF3DE; color: #27500A; }
 .tag-r { background: #E6F1FB; color: #0C447C; }
-.latest-title { font-size: 16px; color: var(--ink); line-height: 1.65; }
+.latest-title { font-size: 16px; color: var(--ink); line-height: 1.65; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
 
 /* ── CTA ── */
 .cta-inner { text-align: center; }
@@ -239,6 +245,20 @@ body {
   transition: background .2s, transform .15s, box-shadow .15s;
 }
 .cta-btn:hover { background: #7A2E1A; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(139,58,42,.45); }
+
+/* ── LINKS ── */
+.links-section .sec-inner { padding-bottom: 28px; }
+.sec-bg-dark .ew { color: rgba(255,255,255,.28); }
+.sec-bg-dark .sec-title { color: rgba(255,255,255,.82); }
+.links-list { display: flex; flex-direction: column; gap: 6px; }
+.link-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; border: 0.5px solid rgba(255,255,255,.12); border-radius: 3px;
+  text-decoration: none; color: rgba(255,255,255,.7); font-size: 14px; background: transparent;
+  transition: background .15s, border-color .15s;
+}
+.link-item:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.28); }
+.link-ext { font-size: 12px; color: rgba(255,255,255,.3); flex-shrink: 0; margin-left: 16px; white-space: nowrap; }
 
 /* ── FOOTER ── */
 footer { background: var(--dark); }
@@ -303,12 +323,12 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 </head>
 <body>
 
-<div class="concept-badge">案B v7 SP — キービジュアル大きめ</div>
+<div class="concept-badge">案B v9 SP — 名称修正（ロゴ・hero-sub・フッター）</div>
 
 <div class="hero-wrap">
   <header class="nav-outer">
     <div class="nav-inner">
-      <div class="nav-logo">地区誌「洗馬」<small>編纂プロジェクト</small></div>
+      <div class="nav-logo">洗馬（せば）地区誌<small>編纂会</small></div>
       <ul class="nav-links">
         <li><a href="#" class="active">トップ</a></li>
         <li><a href="#">読みどころ</a></li>
@@ -320,13 +340,13 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   </header>
 
   <section class="hero">
-    <img class="hero-img" src="../../theme/assets/images/hyoshi.webp" alt="洗馬の風景">
+    <img class="hero-img" src="../../theme/assets/images/seba_wide.jpg" alt="洗馬の風景">
     <div class="hero-content-wrap">
       <div class="hero-content">
         <span class="hero-rule"></span>
         <p class="hero-eyebrow">長野県塩尻市　洗馬（せば）</p>
         <h1 class="hero-catch">この土地の記憶を、<br>かたちにする。</h1>
-        <p class="hero-sub">洗馬の自然/歴史/くらしを記す地区誌編纂プロジェクト</p>
+        <p class="hero-sub">洗馬の自然・歴史・くらしを、記録する。</p>
       </div>
     </div>
     <div class="hero-scroll">
@@ -374,7 +394,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
         </div>
       </a>
       <a class="pickup-card" href="#">
-        <div class="pickup-card-placeholder">写真未定</div>
+        <img class="pickup-card-img" src="../../theme/assets/images/tukiizumi_wide.jpg" alt="歴史">
         <div class="pickup-card-body">
           <p class="pickup-cat">HISTORY</p>
           <p class="pickup-head">京都の公家が荘園を置いた村。</p>
@@ -449,24 +469,24 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
         <p class="col-ew">LATEST</p>
         <h3 class="col-title">最近の活動</h3>
         <div class="latest-item">
-          <span class="latest-date">2025.02</span>
+          <span class="latest-date">2026.02</span>
           <div class="latest-body">
             <span class="latest-tag tag-n">ニュース</span>
-            <span class="latest-title">一次原稿の執筆、佳境に入っています。</span>
+            <span class="latest-title">一次原稿の執筆奮闘中 〜第4号〜</span>
           </div>
         </div>
         <div class="latest-item">
-          <span class="latest-date">2025.01</span>
+          <span class="latest-date">2026.01</span>
           <div class="latest-body">
             <span class="latest-tag tag-r">レポート</span>
-            <span class="latest-title">かやの山で自然観察会を開催しました</span>
+            <span class="latest-title">洗馬の自然学習会開かれる</span>
           </div>
         </div>
         <div class="latest-item">
-          <span class="latest-date">2024.12</span>
+          <span class="latest-date">2025.08</span>
           <div class="latest-body">
             <span class="latest-tag tag-n">ニュース</span>
-            <span class="latest-title">ふるさと文化祭「洗馬地区誌展」を開催</span>
+            <span class="latest-title">今年度から執筆がスタートしています 〜第3号〜</span>
           </div>
         </div>
         <div style="margin-top:14px; text-align:right;">
@@ -487,9 +507,31 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   </div>
 </section>
 
+<!-- LINKS -->
+<section class="sec sec-bg-dark links-section">
+  <div class="sec-inner">
+    <p class="ew">LINKS</p>
+    <h2 class="sec-title">関連リンク</h2>
+    <div class="links-list">
+      <a class="link-item" href="#">
+        <span>本洗馬歴史の里資料館</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+      <a class="link-item" href="#">
+        <span>信州（長野県）中央の自然（野鳥、山野草、風景）</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+      <a class="link-item" href="#">
+        <span>信州塩尻ビデオ</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
-    <p>地区誌「洗馬」編纂プロジェクト　© 2025</p>
+    <p>洗馬地区誌編纂会　© 2026</p>
   </div>
 </footer>
 

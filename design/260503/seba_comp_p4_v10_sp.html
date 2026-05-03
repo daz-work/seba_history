@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P4 v1 SP｜洗馬地区誌 HP — プロジェクト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:        #2C2C2A;
+  --ink-mid:    #5F5E5A;
+  --mid:        #888780;
+  --vermillion: #8B3A2A;
+  --white:      #FFFFFF;
+  --beige-1:    #F7F4EE;
+  --beige-2:    #EDE8DC;
+  --beige-cta:  #F5E4D9;
+  --border:     #E0DDD5;
+  --dark:       #2C2C2A;
+  --content-w:  1100px;
+  --nav-h:      62px;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.concept-badge {
+  position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+  z-index: 999; background: var(--vermillion); color: #fff;
+  font-size: 10px; letter-spacing: .2em; padding: 4px 18px;
+  border-radius: 0 0 6px 6px; white-space: nowrap;
+}
+
+/* ── NAV ── */
+.hero-wrap { position: relative; }
+.nav-outer {
+  position: absolute; top: 0; left: 0; right: 0;
+  z-index: 100; background: transparent; transition: background .25s;
+}
+.nav-outer.is-sticky { position: fixed; background: var(--dark); }
+.nav-inner {
+  max-width: var(--content-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: var(--nav-h);
+}
+.nav-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 400; letter-spacing: .1em;
+  line-height: 1.5; color: rgba(255,255,255,.92);
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.nav-logo small {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px; font-weight: 300;
+  color: rgba(255,255,255,.55); margin-left: 7px; letter-spacing: .08em;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 16px; letter-spacing: .1em;
+  color: rgba(255,255,255,.62); text-decoration: none; font-weight: 300;
+  text-shadow: 0 1px 3px rgba(0,0,0,.35); transition: color .2s;
+}
+.nav-links a:hover { color: rgba(255,255,255,.92); }
+.nav-links a.active { color: rgba(255,255,255,.95); }
+.nav-hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,.9); font-size: 22px; line-height: 1; padding: 4px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+
+/* ── HERO（A案コンパクト準拠） ── */
+.hero {
+  position: relative; width: 100%;
+  aspect-ratio: 21/5; min-height: 180px; max-height: 36vh;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 35%;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,.38) 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.58) 100%);
+}
+.hero-content-wrap {
+  position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end;
+}
+.hero-content {
+  max-width: var(--content-w); width: 100%;
+  margin: 0 auto; padding: 0 40px 30px; color: #fff;
+}
+.hero-eyebrow { font-size: 14px; letter-spacing: .2em; color: rgba(255,255,255,.65); margin-bottom: 8px; font-weight: 300; }
+.hero-catch { font-family: 'Noto Serif JP', serif; font-size: 34px; font-weight: 500; line-height: 1.55; letter-spacing: .06em; }
+
+/* ── セクション共通 ── */
+.sec { width: 100%; }
+.sec-inner { max-width: var(--content-w); margin: 0 auto; padding: 60px 40px; }
+.sec-bg-white  { background: var(--white); }
+.sec-bg-beige1 { background: var(--beige-1); }
+.sec-bg-dark   { background: var(--dark); }
+
+.ew { font-size: 11px; letter-spacing: .4em; color: var(--vermillion); font-weight: 300; margin-bottom: 8px; }
+.sec-title { font-family: 'Noto Serif JP', serif; font-size: 25px; font-weight: 400; letter-spacing: .05em; margin-bottom: 8px; color: var(--ink); }
+.sec-sub { font-size: 14px; color: var(--mid); margin-bottom: 36px; }
+
+/* ── THE TEAM: ORG CHART ── */
+.org-wrap {
+  background: var(--beige-1); border-radius: 4px;
+  padding: 24px; margin-bottom: 28px;
+}
+.org-flow {
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.org-box {
+  flex: 1; min-width: 0;
+  border: 0.5px solid var(--mid); border-radius: 3px;
+  padding: 12px 14px; background: var(--beige-1);
+}
+.org-box-title {
+  font-size: 13px; font-weight: 500; color: var(--ink);
+  padding-bottom: 6px; margin-bottom: 8px;
+  border-bottom: 0.5px solid var(--border);
+}
+.org-box-members {
+  font-size: 12px; color: var(--ink-mid); line-height: 2;
+}
+.org-arrow {
+  color: var(--mid); font-size: 13px; padding-top: 16px; flex-shrink: 0;
+}
+.org-inner {
+  flex: 1; border: 0.5px solid var(--mid); border-radius: 3px;
+  padding: 12px 14px; background: var(--beige-1);
+}
+.org-inner-title {
+  font-size: 13px; font-weight: 500; color: var(--ink);
+  padding-bottom: 6px; margin-bottom: 12px;
+  border-bottom: 0.5px solid var(--border);
+}
+.org-inner-flow {
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.org-inner-arrow {
+  color: var(--mid); font-size: 11px; padding-top: 12px; flex-shrink: 0;
+}
+.org-sub-box {
+  flex: 1; min-width: 0;
+  border: 0.5px solid var(--border); border-radius: 3px;
+  padding: 8px 10px; background: var(--beige-1);
+}
+.org-sub-title {
+  font-size: 11px; font-weight: 500; color: var(--ink-mid);
+  margin-bottom: 5px;
+}
+.org-sub-members {
+  font-size: 12px; color: var(--ink-mid); line-height: 1.9;
+}
+.org-note {
+  font-size: 12px; color: var(--mid); margin-top: 12px;
+}
+
+/* ── MESSAGE LIST（縦並び） ── */
+.msg-list { display: flex; flex-direction: column; gap: 12px; }
+.msg-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--beige-1); border-radius: 4px; padding: 16px;
+}
+.msg-photo-sm {
+  width: 64px; height: 80px; border-radius: 3px; flex-shrink: 0;
+  background: var(--beige-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: var(--mid); text-align: center; line-height: 1.4;
+}
+.msg-text { flex: 1; min-width: 0; }
+.msg-role { font-size: 11px; color: var(--mid); margin-bottom: 2px; }
+.msg-name {
+  font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 4px;
+}
+.msg-bio {
+  font-size: 12px; color: var(--mid); line-height: 1.6;
+  border-left: 2px solid var(--beige-2); padding-left: 7px;
+  margin-bottom: 8px;
+}
+.msg-quote {
+  font-size: 13px; color: var(--ink-mid); line-height: 1.95;
+  font-style: italic; overflow-wrap: anywhere;
+}
+.msg-dummy { font-size: 10px; color: rgba(136,135,128,.4); margin-top: 4px; }
+
+/* ── PURCHASE ── */
+.purchase-box {
+  border: 1px solid var(--border); border-radius: 4px; padding: 28px 32px;
+}
+.purchase-badge {
+  display: inline-block; font-size: 11px; padding: 3px 10px;
+  background: #FAEEDA; color: #633806; border-radius: 2px; margin-bottom: 14px;
+  letter-spacing: .04em;
+}
+.purchase-timing {
+  font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 400;
+  color: var(--ink); margin-bottom: 14px; letter-spacing: .05em;
+}
+.purchase-text {
+  font-size: 14px; color: var(--ink-mid); line-height: 2.0;
+}
+.purchase-note {
+  font-size: 12px; color: var(--mid); margin-top: 14px;
+  padding-top: 14px; border-top: 1px solid var(--border);
+}
+
+/* ── CTA ── */
+.sec-bg-cta { background: var(--beige-cta); }
+.cta-inner { text-align: center; }
+.cta-eyebrow { font-size: 11px; letter-spacing: .28em; color: var(--vermillion); margin-bottom: 16px; font-weight: 300; }
+.cta-heading { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.7; letter-spacing: .05em; margin-bottom: 14px; }
+.cta-body { font-size: 14px; color: var(--ink-mid); line-height: 2.0; margin-bottom: 32px; }
+.cta-btn {
+  display: inline-block; background: var(--vermillion); color: #fff;
+  font-size: 15px; padding: 16px 56px; border-radius: 32px;
+  text-decoration: none; letter-spacing: .14em;
+  box-shadow: 0 3px 14px rgba(139,58,42,.35);
+  transition: background .2s, transform .15s, box-shadow .15s;
+}
+.cta-btn:hover { background: #7A2E1A; transform: translateY(-2px); }
+
+/* ── LINKS ── */
+.links-section .sec-inner { padding-bottom: 28px; }
+.sec-bg-dark .ew { color: rgba(255,255,255,.28); }
+.sec-bg-dark .sec-title { color: rgba(255,255,255,.82); }
+.links-list { display: flex; flex-direction: column; gap: 6px; }
+.link-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; border: 0.5px solid rgba(255,255,255,.12); border-radius: 3px;
+  text-decoration: none; color: rgba(255,255,255,.7); font-size: 14px; background: transparent;
+  transition: background .15s, border-color .15s;
+}
+.link-item:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.28); }
+.link-ext { font-size: 12px; color: rgba(255,255,255,.3); flex-shrink: 0; margin-left: 16px; white-space: nowrap; }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.06); }
+.footer-inner { max-width: var(--content-w); margin: 0 auto; padding: 18px 40px; }
+footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em; }
+
+/* ===== SP OVERRIDES ===== */
+@media (max-width: 767px) {
+  :root { --nav-h: 52px; }
+
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; align-items: center; }
+
+  .hero {
+    aspect-ratio: 3/2; min-height: 200px; max-height: none;
+  }
+  .hero-img {
+    inset: auto; top: 0; left: 0; transform: none;
+    width: auto; height: 140%; min-width: 100%;
+  }
+  .hero-catch { font-size: 22px; }
+  .hero-eyebrow { font-size: 13px; margin-bottom: 5px; }
+  .hero-content { padding: 0 20px 20px; }
+
+  .sec-inner { padding: 44px 20px; }
+  .sec-title { font-size: 22px; }
+
+  /* SP ORG */
+  .org-flow { flex-direction: column; align-items: stretch; gap: 10px; }
+  .org-box { width: 100%; }
+  .org-arrow { padding-top: 0; display: flex; justify-content: center; transform: rotate(90deg); }
+  .org-inner { width: 100%; }
+
+  /* SP PURCHASE */
+  .purchase-box { padding: 20px; }
+  .purchase-timing { font-size: 18px; }
+
+  /* SP CTA */
+  .cta-heading { font-size: 20px; }
+  .cta-btn { padding: 15px 0; display: block; width: 100%; text-align: center; }
+
+  .footer-inner { padding: 16px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="concept-badge">P4 v1 — プロジェクト</div>
+
+<div class="hero-wrap">
+  <header class="nav-outer">
+    <div class="nav-inner">
+      <div class="nav-logo">洗馬（せば）地区誌<small>編纂会</small></div>
+      <ul class="nav-links">
+        <li><a href="#">トップ</a></li>
+        <li><a href="#">読みどころ</a></li>
+        <li><a href="#">活動記録</a></li>
+        <li><a href="#" class="active">プロジェクト</a></li>
+      </ul>
+      <button class="nav-hamburger">&#9776;</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img class="hero-img" src="../../theme/assets/images/seba_wide.jpg" alt="洗馬の風景">
+    <div class="hero-content-wrap">
+      <div class="hero-content">
+        <p class="hero-eyebrow">PROJECT</p>
+        <h1 class="hero-catch">こうして、進めています。</h1>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- THE TEAM -->
+<section class="sec sec-bg-white">
+  <div class="sec-inner">
+    <p class="ew">THE TEAM</p>
+    <h2 class="sec-title">こんな人たちが、つくっています。</h2>
+
+    <div class="org-wrap">
+      <div class="org-flow">
+        <div class="org-box">
+          <div class="org-box-title">洗馬地区誌編纂会</div>
+          <div class="org-box-members">
+            会長：石井達朗<br>
+            事務局長：南山貴志<br>
+            顧問：清水英成
+          </div>
+        </div>
+        <div class="org-arrow">→</div>
+        <div class="org-inner">
+          <div class="org-inner-title">洗馬地区誌編集委員会</div>
+          <div class="org-inner-flow">
+            <div class="org-sub-box">
+              <div class="org-sub-members">
+                委員長：中原文彦<br>
+                副委員長：大池佐一郎<br>
+                副委員長：熊谷康治<br>
+                事務局長：征矢野泉<br>
+                会計：清水俊明
+              </div>
+            </div>
+            <div class="org-inner-arrow">→</div>
+            <div class="org-sub-box">
+              <div class="org-sub-title">専門部会（6部会）</div>
+              <div class="org-sub-members">
+                自然：青柳信雄<br>
+                古代：熊谷康治<br>
+                近世：中原文彦<br>
+                近代：征矢野泉<br>
+                くらし：大池佐一郎<br>
+                ふるさと：三溝隆
+              </div>
+            </div>
+          </div>
+          <div class="org-note">編集委員31名・協力員4名が各部会を担当。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE -->
+<section class="sec sec-bg-beige1">
+  <div class="sec-inner">
+    <p class="ew">MESSAGE</p>
+    <h2 class="sec-title">メンバーからひとこと</h2>
+
+    <div class="msg-list">
+      <div class="msg-item">
+        <div class="msg-photo-sm">写真</div>
+        <div class="msg-text">
+          <div class="msg-role">編纂会長</div>
+          <div class="msg-name">石井 達朗</div>
+          <div class="msg-bio">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX（※ダミー経歴）</div>
+          <div class="msg-quote">洗馬には誇るべき自然と歴史がありながら、それを体系的にまとめた記録がありませんでした。地域の記憶を次の世代に手渡すこの地区誌が、洗馬の新しい財産となることを願っています。XXXXXXXXXXXXXXXXXXXXXXXX（※ダミーテキスト）</div>
+          <div class="msg-dummy">※ダミーテキスト</div>
+        </div>
+      </div>
+      <div class="msg-item">
+        <img class="msg-photo-sm" src="../../_refs/images/iincho.png" alt="中原文彦" style="object-fit:cover;">
+        <div class="msg-text">
+          <div class="msg-role">編集委員長</div>
+          <div class="msg-name">中原 文彦</div>
+          <div class="msg-bio">元製造メーカー勤務。退職後は市の歴史資料館「釜井庵」の館長を務め、地域の歴史研究に取り組む。</div>
+          <div class="msg-quote">洗馬は、山と水に恵まれた豊かな自然と、京都の公家が荘園を置き、菅江真澄が旅の起点に選んだほどの文化的な土壌を持つ土地です。しかし塩尻市の各地区が地区誌を持つ中で、洗馬だけが地域の記録を持たないまま今日に至っています。<br><br>高齢化と過疎化が進む中で、地域の記憶を直接知る方々が少なくなっています。いまこの瞬間に記録しなければ、洗馬の歴史と文化の多くは永遠に失われてしまう——そんな危機感がこのプロジェクトを動かしました。<br><br>地域の皆さんが気軽に手にとって読める本、学校でも活用される本を目指して、31名の編集委員とともに編纂を進めています。ご支援・ご協力をどうぞよろしくお願いいたします。</div>
+        </div>
+      </div>
+      <div class="msg-item">
+        <div class="msg-photo-sm">写真</div>
+        <div class="msg-text">
+          <div class="msg-role">事務局長</div>
+          <div class="msg-name">征矢野 泉</div>
+          <div class="msg-bio">元テレビ局報道部員。現在はYouTubeで塩尻市内の祭り・イベント・コンサートなどを精力的に発信中。</div>
+          <div class="msg-quote">元テレビ局報道部員として長年、地域の出来事を映像で記録してきました。カメラを通じて地域を見続けてきた経験を、この地区誌の編纂にも活かしたいと思っています。皆さんの手元にある古い写真や記憶——ぜひ私たちに教えてください。XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX（※ダミーテキスト）</div>
+          <div class="msg-dummy">※ダミーテキスト</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PURCHASE -->
+<section class="sec sec-bg-white">
+  <div class="sec-inner">
+    <p class="ew">PURCHASE</p>
+    <h2 class="sec-title">ご購入・応援のご案内</h2>
+
+    <div class="purchase-box">
+      <div class="purchase-badge">刊行後に案内予定</div>
+      <div class="purchase-timing">令和10年度末 刊行予定</div>
+      <div class="purchase-text">
+        価格・購入方法は現在検討中です。刊行が決定次第、このページでご案内します。<br><br>
+        現時点では「購入リクエスト」のご登録を受け付けています。
+      </div>
+      <div class="purchase-note">
+        ※ 洗馬地区内の方は、各地区の窓口（区長経由）にて取りまとめる予定です。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec sec-bg-cta">
+  <div class="sec-inner">
+    <div class="cta-inner">
+      <p class="cta-eyebrow">SUPPORT THE PROJECT</p>
+      <h2 class="cta-heading">地区誌の刊行を、<br>一緒に応援してください。</h2>
+      <p class="cta-body">購入リクエスト・寄付・情報提供、お気軽にどうぞ。</p>
+      <a href="#" class="cta-btn">応援・お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section class="sec sec-bg-dark links-section">
+  <div class="sec-inner">
+    <p class="ew">LINKS</p>
+    <h2 class="sec-title">関連リンク</h2>
+    <div class="links-list">
+      <a class="link-item" href="#">
+        <span>本洗馬歴史の里資料館</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+      <a class="link-item" href="#">
+        <span>信州（長野県）中央の自然（野鳥、山野草、風景）</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+      <a class="link-item" href="#">
+        <span>信州塩尻ビデオ</span>
+        <span class="link-ext">外部リンク →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>洗馬地区誌編纂会　© 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav-outer');
+  var heroWrap = document.querySelector('.hero-wrap');
+  function onScroll(){
+    nav.classList.toggle('is-sticky', heroWrap.getBoundingClientRect().bottom <= 0);
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
