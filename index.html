@@ -328,6 +328,65 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
   .footer-inner { padding: 16px 20px; }
   .footer-nav { display: none; }
 }
+
+/* ── SP DRAWER ── */
+.sp-drawer-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.5);
+  opacity: 0; transition: opacity .28s ease;
+}
+.sp-drawer-overlay.is-open { display: block; }
+.sp-drawer-overlay.is-visible { opacity: 1; }
+
+.sp-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 201;
+  width: min(320px, 90vw);
+  background: var(--dark);
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  display: flex; flex-direction: column;
+  padding: 0 0 40px;
+}
+.sp-drawer.is-open { transform: translateX(0); }
+
+.sp-drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px; padding: 0 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.sp-drawer-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px; font-weight: 400; letter-spacing: .08em;
+  color: rgba(255,255,255,.7); line-height: 1.4;
+}
+.sp-drawer-close {
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,.6); font-size: 24px; line-height: 1;
+  padding: 4px; display: flex; align-items: center; justify-content: center;
+  transition: color .2s;
+}
+.sp-drawer-close:hover { color: rgba(255,255,255,.95); }
+
+.sp-drawer-nav {
+  list-style: none; padding: 20px 0; flex: 1;
+}
+.sp-drawer-nav li + li {
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.sp-drawer-nav a {
+  display: block; padding: 18px 28px;
+  font-size: 17px; letter-spacing: .12em; font-weight: 300;
+  color: rgba(255,255,255,.65); text-decoration: none;
+  transition: color .2s, background .2s;
+}
+.sp-drawer-nav a:hover { color: rgba(255,255,255,.95); background: rgba(255,255,255,.04); }
+.sp-drawer-nav a.active { color: var(--white); }
+.sp-drawer-nav a.active::before {
+  content: ''; display: inline-block;
+  width: 3px; height: 14px; background: var(--vermillion);
+  vertical-align: middle; margin-right: 12px; border-radius: 2px;
+}
 </style>
 </head>
 <body>
@@ -343,9 +402,24 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
         <li><a href="activity/">活動記録</a></li>
         <li><a href="about/">ご案内</a></li>
       </ul>
-      <button class="nav-hamburger">&#9776;</button>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="メニューを開く">&#9776;</button>
     </div>
   </header>
+
+  <!-- SP ドロワー -->
+  <div class="sp-drawer-overlay" id="drawerOverlay"></div>
+  <nav class="sp-drawer" id="spDrawer" aria-label="モバイルナビゲーション">
+    <div class="sp-drawer-head">
+      <span class="sp-drawer-logo">洗馬（せば）地区誌<br>編纂会</span>
+      <button class="sp-drawer-close" id="drawerClose" aria-label="メニューを閉じる">&#10005;</button>
+    </div>
+    <ul class="sp-drawer-nav">
+      <li><a href="./" class="active">トップ</a></li>
+      <li><a href="highlights/">読みどころ</a></li>
+      <li><a href="activity/">活動記録</a></li>
+      <li><a href="about/">ご案内</a></li>
+    </ul>
+  </nav>
 
   <section class="hero">
     <img class="hero-img" src="theme/assets/images/seba_wide_green.jpg" alt="洗馬の風景">
@@ -556,6 +630,36 @@ footer p { font-size: 12px; color: rgba(255,255,255,.28); letter-spacing: .08em;
 
   document.getElementById('scrollBtn').addEventListener('click', function(){
     document.querySelector('.sec').scrollIntoView({behavior: 'smooth'});
+  });
+
+  // ── ハンバーガーメニュー ──
+  var hamburger = document.getElementById('hamburgerBtn');
+  var drawer    = document.getElementById('spDrawer');
+  var overlay   = document.getElementById('drawerOverlay');
+
+  function openDrawer() {
+    overlay.classList.add('is-open');
+    requestAnimationFrame(function() {
+      overlay.classList.add('is-visible');
+      drawer.classList.add('is-open');
+    });
+    document.body.style.overflow = 'hidden';
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    overlay.classList.remove('is-visible');
+    drawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
+    setTimeout(function(){ overlay.classList.remove('is-open'); }, 280);
+  }
+
+  hamburger.addEventListener('click', openDrawer);
+  document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeDrawer();
   });
 })();
 </script>
